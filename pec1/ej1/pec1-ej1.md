@@ -112,20 +112,3 @@ eth.sendTransaction({from:eth.accounts[0], to:eth.accounts[1], value: web3.toWei
 
 ![Transferir monto entre cuentas](images/transferir.png?raw=true "Transferir monto entre cuentas")
 
-
-
-
-
-## Instalación de Ethereum Explorer
-
-``` 
-git clone https://github.com/carsenk/explorer
-cd explorer
-npm install
-npm start
-``` 
-![Resultado luego de la instalación e inicio de Ethereum Explorer](images/ethereum-explorer.png?raw=true "Resultado instalación Ethereum Explorer")
-
-Se puede ver el explorador en: http://localhost:8000
-
-![Resultado luego de la instalación e inicio de Ethereum Explorer](images/ethereum-explorer.png?raw=true "Resultado instalación Ethereum Explorer")
