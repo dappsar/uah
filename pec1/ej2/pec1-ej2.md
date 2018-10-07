@@ -85,9 +85,15 @@ Opción 2: admin.peers.length
 
 ``` 
 Opción 1: admin.peers
+``` 
 
+![info peers](images/rinkeby-peers-info.png?raw=true "info peers")
+
+
+``` 
 Opción 2: admin.peers.forEach(function(value){console.log(value.network.remoteAddress+"\t"+value.name)})
 ``` 
+![info peers](images/rinkeby-peers-info-2.png?raw=true "info peers")
 
 
 ### Altura máxima de bloque de los peers
