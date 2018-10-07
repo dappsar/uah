@@ -1,0 +1,3080 @@
+    /* "contract.sol":1786:4789  contract TeracoinToken is Token("TRC", "Teracoin", 18, 100000000000), ERC20, ERC223 {... */
+  mstore(0x40, 0x80)
+    /* "contract.sol":840:844  1000 */
+  0x3e8
+    /* "contract.sol":811:844  uint internal _totalSupply = 1000 */
+  0x3
+  sstore
+    /* "contract.sol":979:1184  function Token(string symbol, string name, uint8 decimals, uint totalSupply) public {... */
+  0x40
+  dup1
+  mload
+  swap1
+  dup2
+  add
+  0x40
+  mstore
+  dup1
+  0x3
+  dup2
+  mstore
+  0x20
+  add
+  0x5452430000000000000000000000000000000000000000000000000000000000
+  dup2
+  mstore
+  pop
+  0x40
+  dup1
+  mload
+  swap1
+  dup2
+  add
+  0x40
+  mstore
+  dup1
+  0x8
+  dup2
+  mstore
+  0x20
+  add
+  0x54657261636f696e000000000000000000000000000000000000000000000000
+  dup2
+  mstore
+  pop
+    /* "contract.sol":1837:1839  18 */
+  0x12
+    /* "contract.sol":1841:1853  100000000000 */
+  0x174876e800
+    /* "contract.sol":1083:1089  symbol */
+  dup4
+    /* "contract.sol":1073:1080  _symbol */
+  0x0
+    /* "contract.sol":1073:1089  _symbol = symbol */
+  swap1
+  dup1
+  mload
+  swap1
+  0x20
+  add
+  swap1
+  tag_3
+  swap3
+  swap2
+  swap1
+  jump	// in(tag_4)
+tag_3:
+  pop
+    /* "contract.sol":1107:1111  name */
+  dup3
+    /* "contract.sol":1099:1104  _name */
+  0x1
+    /* "contract.sol":1099:1111  _name = name */
+  swap1
+  dup1
+  mload
+  swap1
+  0x20
+  add
+  swap1
+  tag_5
+  swap3
+  swap2
+  swap1
+  jump	// in(tag_4)
+tag_5:
+  pop
+    /* "contract.sol":1133:1141  decimals */
+  dup2
+    /* "contract.sol":1121:1130  _decimals */
+  0x2
+  0x0
+    /* "contract.sol":1121:1141  _decimals = decimals */
+  0x100
+  exp
+  dup2
+  sload
+  dup2
+  0xff
+  mul
+  not
+  and
+  swap1
+  dup4
+  0xff
+  and
+  mul
+  or
+  swap1
+  sstore
+  pop
+    /* "contract.sol":1166:1177  totalSupply */
+  dup1
+    /* "contract.sol":1151:1163  _totalSupply */
+  0x3
+    /* "contract.sol":1151:1177  _totalSupply = totalSupply */
+  dup2
+  swap1
+  sstore
+  pop
+    /* "contract.sol":979:1184  function Token(string symbol, string name, uint8 decimals, uint totalSupply) public {... */
+  pop
+  pop
+  pop
+  pop
+    /* "contract.sol":1786:4789  contract TeracoinToken is Token("TRC", "Teracoin", 18, 100000000000), ERC20, ERC223 {... */
+  jump(tag_6)
+tag_4:
+  dup3
+  dup1
+  sload
+  0x1
+  dup2
+  0x1
+  and
+  iszero
+  0x100
+  mul
+  sub
+  and
+  0x2
+  swap1
+  div
+  swap1
+  0x0
+  mstore
+  keccak256(0x0, 0x20)
+  swap1
+  0x1f
+  add
+  0x20
+  swap1
+  div
+  dup2
+  add
+  swap3
+  dup3
+  0x1f
+  lt
+  tag_8
+  jumpi
+  dup1
+  mload
+  not(0xff)
+  and
+  dup4
+  dup1
+  add
+  or
+  dup6
+  sstore
+  jump(tag_7)
+tag_8:
+  dup3
+  dup1
+  add
+  0x1
+  add
+  dup6
+  sstore
+  dup3
+  iszero
+  tag_7
+  jumpi
+  swap2
+  dup3
+  add
+tag_9:
+  dup3
+  dup2
+  gt
+  iszero
+  tag_10
+  jumpi
+  dup3
+  mload
+  dup3
+  sstore
+  swap2
+  0x20
+  add
+  swap2
+  swap1
+  0x1
+  add
+  swap1
+  jump(tag_9)
+tag_10:
+tag_7:
+  pop
+  swap1
+  pop
+  tag_11
+  swap2
+  swap1
+  jump	// in(tag_12)
+tag_11:
+  pop
+  swap1
+  jump	// out
+tag_12:
+  tag_13
+  swap2
+  swap1
+tag_14:
+  dup1
+  dup3
+  gt
+  iszero
+  tag_15
+  jumpi
+  0x0
+  dup2
+  0x0
+  swap1
+  sstore
+  pop
+  0x1
+  add
+  jump(tag_14)
+tag_15:
+  pop
+  swap1
+  jump
+tag_13:
+  swap1
+  jump	// out
+tag_6:
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x0
+  codecopy
+  0x0
+  return
+stop
+
+sub_0: assembly {
+        /* "contract.sol":1786:4789  contract TeracoinToken is Token("TRC", "Teracoin", 18, 100000000000), ERC20, ERC223 {... */
+      mstore(0x40, 0x80)
+      jumpi(tag_1, lt(calldatasize, 0x4))
+      calldataload(0x0)
+      0x100000000000000000000000000000000000000000000000000000000
+      swap1
+      div
+      0xffffffff
+      and
+      dup1
+      0x6fdde03
+      eq
+      tag_2
+      jumpi
+      dup1
+      0x95ea7b3
+      eq
+      tag_3
+      jumpi
+      dup1
+      0x18160ddd
+      eq
+      tag_4
+      jumpi
+      dup1
+      0x23b872dd
+      eq
+      tag_5
+      jumpi
+      dup1
+      0x313ce567
+      eq
+      tag_6
+      jumpi
+      dup1
+      0x40753a76
+      eq
+      tag_7
+      jumpi
+      dup1
+      0x41c0e1b5
+      eq
+      tag_8
+      jumpi
+      dup1
+      0x70a08231
+      eq
+      tag_9
+      jumpi
+      dup1
+      0x95d89b41
+      eq
+      tag_10
+      jumpi
+      dup1
+      0x969fbf12
+      eq
+      tag_11
+      jumpi
+      dup1
+      0xa9059cbb
+      eq
+      tag_12
+      jumpi
+      dup1
+      0xbe45fd62
+      eq
+      tag_13
+      jumpi
+      dup1
+      0xdd62ed3e
+      eq
+      tag_14
+      jumpi
+    tag_1:
+      0x0
+      dup1
+      revert
+        /* "contract.sol":1194:1272  function name() public constant returns (string) {... */
+    tag_2:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_15
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_15:
+        /* "contract.sol":1194:1272  function name() public constant returns (string) {... */
+      pop
+      tag_16
+      jump(tag_17)
+    tag_16:
+      mload(0x40)
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      dup4
+      dup2
+      dup2
+      mload
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      dup1
+      mload
+      swap1
+      0x20
+      add
+      swap1
+      dup1
+      dup4
+      dup4
+        /* "--CODEGEN--":23:24   */
+      0x0
+        /* "--CODEGEN--":8:108   */
+    tag_18:
+        /* "--CODEGEN--":33:36   */
+      dup4
+        /* "--CODEGEN--":30:31   */
+      dup2
+        /* "--CODEGEN--":27:37   */
+      lt
+        /* "--CODEGEN--":8:108   */
+      iszero
+      tag_19
+      jumpi
+        /* "--CODEGEN--":99:100   */
+      dup1
+        /* "--CODEGEN--":94:97   */
+      dup3
+        /* "--CODEGEN--":90:101   */
+      add
+        /* "--CODEGEN--":84:102   */
+      mload
+        /* "--CODEGEN--":80:81   */
+      dup2
+        /* "--CODEGEN--":75:78   */
+      dup5
+        /* "--CODEGEN--":71:82   */
+      add
+        /* "--CODEGEN--":64:103   */
+      mstore
+        /* "--CODEGEN--":52:54   */
+      0x20
+        /* "--CODEGEN--":49:50   */
+      dup2
+        /* "--CODEGEN--":45:55   */
+      add
+        /* "--CODEGEN--":40:55   */
+      swap1
+      pop
+        /* "--CODEGEN--":8:108   */
+      jump(tag_18)
+    tag_19:
+        /* "--CODEGEN--":12:26   */
+      pop
+        /* "contract.sol":1194:1272  function name() public constant returns (string) {... */
+      pop
+      pop
+      pop
+      swap1
+      pop
+      swap1
+      dup2
+      add
+      swap1
+      0x1f
+      and
+      dup1
+      iszero
+      tag_21
+      jumpi
+      dup1
+      dup3
+      sub
+      dup1
+      mload
+      0x1
+      dup4
+      0x20
+      sub
+      0x100
+      exp
+      sub
+      not
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+    tag_21:
+      pop
+      swap3
+      pop
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":3977:4182  function approve(address _spender, uint _value) external returns (bool) {... */
+    tag_3:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_22
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_22:
+        /* "contract.sol":3977:4182  function approve(address _spender, uint _value) external returns (bool) {... */
+      pop
+      tag_23
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_24)
+    tag_23:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":2102:2202  function totalSupply() public onlyOwner constant returns (uint) {... */
+    tag_4:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_25
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_25:
+        /* "contract.sol":2102:2202  function totalSupply() public onlyOwner constant returns (uint) {... */
+      pop
+      tag_26
+      jump(tag_27)
+    tag_26:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":3460:3967  function transferFrom(address _from, address _to, uint _value) external returns (bool) {... */
+    tag_5:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_28
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_28:
+        /* "contract.sol":3460:3967  function transferFrom(address _from, address _to, uint _value) external returns (bool) {... */
+      pop
+      tag_29
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_30)
+    tag_29:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":1374:1459  function decimals() public constant returns (uint8) {... */
+    tag_6:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_31
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_31:
+        /* "contract.sol":1374:1459  function decimals() public constant returns (uint8) {... */
+      pop
+      tag_32
+      jump(tag_33)
+    tag_32:
+      mload(0x40)
+      dup1
+      dup3
+      0xff
+      and
+      0xff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":4343:4431  function addSupply(uint amount) public onlyOwner {... */
+    tag_7:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_34
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_34:
+        /* "contract.sol":4343:4431  function addSupply(uint amount) public onlyOwner {... */
+      pop
+      tag_35
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_36)
+    tag_35:
+      stop
+        /* "contract.sol":4653:4787  function kill() public { //self-destruct function, ... */
+    tag_8:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_37
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_37:
+        /* "contract.sol":4653:4787  function kill() public { //self-destruct function, ... */
+      pop
+      tag_38
+      jump(tag_39)
+    tag_38:
+      stop
+        /* "contract.sol":2212:2328  function balanceOf(address _addr) public onlyOwner constant returns (uint) {... */
+    tag_9:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_40
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_40:
+        /* "contract.sol":2212:2328  function balanceOf(address _addr) public onlyOwner constant returns (uint) {... */
+      pop
+      tag_41
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_42)
+    tag_41:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":1282:1364  function symbol() public constant returns (string) {... */
+    tag_10:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_43
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_43:
+        /* "contract.sol":1282:1364  function symbol() public constant returns (string) {... */
+      pop
+      tag_44
+      jump(tag_45)
+    tag_44:
+      mload(0x40)
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      dup4
+      dup2
+      dup2
+      mload
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      dup1
+      mload
+      swap1
+      0x20
+      add
+      swap1
+      dup1
+      dup4
+      dup4
+        /* "--CODEGEN--":23:24   */
+      0x0
+        /* "--CODEGEN--":8:108   */
+    tag_46:
+        /* "--CODEGEN--":33:36   */
+      dup4
+        /* "--CODEGEN--":30:31   */
+      dup2
+        /* "--CODEGEN--":27:37   */
+      lt
+        /* "--CODEGEN--":8:108   */
+      iszero
+      tag_47
+      jumpi
+        /* "--CODEGEN--":99:100   */
+      dup1
+        /* "--CODEGEN--":94:97   */
+      dup3
+        /* "--CODEGEN--":90:101   */
+      add
+        /* "--CODEGEN--":84:102   */
+      mload
+        /* "--CODEGEN--":80:81   */
+      dup2
+        /* "--CODEGEN--":75:78   */
+      dup5
+        /* "--CODEGEN--":71:82   */
+      add
+        /* "--CODEGEN--":64:103   */
+      mstore
+        /* "--CODEGEN--":52:54   */
+      0x20
+        /* "--CODEGEN--":49:50   */
+      dup2
+        /* "--CODEGEN--":45:55   */
+      add
+        /* "--CODEGEN--":40:55   */
+      swap1
+      pop
+        /* "--CODEGEN--":8:108   */
+      jump(tag_46)
+    tag_47:
+        /* "--CODEGEN--":12:26   */
+      pop
+        /* "contract.sol":1282:1364  function symbol() public constant returns (string) {... */
+      pop
+      pop
+      pop
+      swap1
+      pop
+      swap1
+      dup2
+      add
+      swap1
+      0x1f
+      and
+      dup1
+      iszero
+      tag_49
+      jumpi
+      dup1
+      dup3
+      sub
+      dup1
+      mload
+      0x1
+      dup4
+      0x20
+      sub
+      0x100
+      exp
+      sub
+      not
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+    tag_49:
+      pop
+      swap3
+      pop
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":1981:2092  function contructor() public {... */
+    tag_11:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_50
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_50:
+        /* "contract.sol":1981:2092  function contructor() public {... */
+      pop
+      tag_51
+      jump(tag_52)
+    tag_51:
+      stop
+        /* "contract.sol":2334:2708  function transfer(address _to, uint _value) public returns (bool) {... */
+    tag_12:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_53
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_53:
+        /* "contract.sol":2334:2708  function transfer(address _to, uint _value) public returns (bool) {... */
+      pop
+      tag_54
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_55)
+    tag_54:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":2714:3253  function transfer(address _to, uint _value, bytes _data) public returns (bool) {... */
+    tag_13:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_56
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_56:
+        /* "contract.sol":2714:3253  function transfer(address _to, uint _value, bytes _data) public returns (bool) {... */
+      pop
+      tag_57
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      dup3
+      add
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      dup1
+      dup1
+      0x1f
+      add
+      0x20
+      dup1
+      swap2
+      div
+      mul
+      0x20
+      add
+      mload(0x40)
+      swap1
+      dup2
+      add
+      0x40
+      mstore
+      dup1
+      swap4
+      swap3
+      swap2
+      swap1
+      dup2
+      dup2
+      mstore
+      0x20
+      add
+      dup4
+      dup4
+      dup1
+      dup3
+      dup5
+      calldatacopy
+      dup3
+      add
+      swap2
+      pop
+      pop
+      pop
+      pop
+      pop
+      pop
+      swap2
+      swap3
+      swap2
+      swap3
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_58)
+    tag_57:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":4192:4333  function allowance(address _owner, address _spender) external constant returns (uint) {  ... */
+    tag_14:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_59
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_59:
+        /* "contract.sol":4192:4333  function allowance(address _owner, address _spender) external constant returns (uint) {  ... */
+      pop
+      tag_60
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_61)
+    tag_60:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":1194:1272  function name() public constant returns (string) {... */
+    tag_17:
+        /* "contract.sol":1235:1241  string */
+      0x60
+        /* "contract.sol":1260:1265  _name */
+      0x1
+        /* "contract.sol":1253:1265  return _name */
+      dup1
+      sload
+      0x1
+      dup2
+      0x1
+      and
+      iszero
+      0x100
+      mul
+      sub
+      and
+      0x2
+      swap1
+      div
+      dup1
+      0x1f
+      add
+      0x20
+      dup1
+      swap2
+      div
+      mul
+      0x20
+      add
+      mload(0x40)
+      swap1
+      dup2
+      add
+      0x40
+      mstore
+      dup1
+      swap3
+      swap2
+      swap1
+      dup2
+      dup2
+      mstore
+      0x20
+      add
+      dup3
+      dup1
+      sload
+      0x1
+      dup2
+      0x1
+      and
+      iszero
+      0x100
+      mul
+      sub
+      and
+      0x2
+      swap1
+      div
+      dup1
+      iszero
+      tag_63
+      jumpi
+      dup1
+      0x1f
+      lt
+      tag_64
+      jumpi
+      0x100
+      dup1
+      dup4
+      sload
+      div
+      mul
+      dup4
+      mstore
+      swap2
+      0x20
+      add
+      swap2
+      jump(tag_63)
+    tag_64:
+      dup3
+      add
+      swap2
+      swap1
+      0x0
+      mstore
+      keccak256(0x0, 0x20)
+      swap1
+    tag_65:
+      dup2
+      sload
+      dup2
+      mstore
+      swap1
+      0x1
+      add
+      swap1
+      0x20
+      add
+      dup1
+      dup4
+      gt
+      tag_65
+      jumpi
+      dup3
+      swap1
+      sub
+      0x1f
+      and
+      dup3
+      add
+      swap2
+    tag_63:
+      pop
+      pop
+      pop
+      pop
+      pop
+      swap1
+      pop
+        /* "contract.sol":1194:1272  function name() public constant returns (string) {... */
+      swap1
+      jump	// out
+        /* "contract.sol":3977:4182  function approve(address _spender, uint _value) external returns (bool) {... */
+    tag_24:
+        /* "contract.sol":4043:4047  bool */
+      0x0
+        /* "contract.sol":4095:4101  _value */
+      dup2
+        /* "contract.sol":4059:4070  _allowances */
+      0x5
+        /* "contract.sol":4059:4082  _allowances[msg.sender] */
+      0x0
+        /* "contract.sol":4071:4081  msg.sender */
+      caller
+        /* "contract.sol":4059:4082  _allowances[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+        /* "contract.sol":4059:4092  _allowances[msg.sender][_spender] */
+      0x0
+        /* "contract.sol":4083:4091  _spender */
+      dup6
+        /* "contract.sol":4059:4092  _allowances[msg.sender][_spender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+        /* "contract.sol":4059:4101  _allowances[msg.sender][_spender] = _value */
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":4137:4145  _spender */
+      dup3
+        /* "contract.sol":4116:4154  Approval(msg.sender, _spender, _value) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":4125:4135  msg.sender */
+      caller
+        /* "contract.sol":4116:4154  Approval(msg.sender, _spender, _value) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925
+        /* "contract.sol":4147:4153  _value */
+      dup5
+        /* "contract.sol":4116:4154  Approval(msg.sender, _spender, _value) */
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      log3
+        /* "contract.sol":4171:4175  true */
+      0x1
+        /* "contract.sol":4164:4175  return true */
+      swap1
+      pop
+        /* "contract.sol":3977:4182  function approve(address _spender, uint _value) external returns (bool) {... */
+      swap3
+      swap2
+      pop
+      pop
+      jump	// out
+        /* "contract.sol":2102:2202  function totalSupply() public onlyOwner constant returns (uint) {... */
+    tag_27:
+        /* "contract.sol":2160:2164  uint */
+      0x0
+        /* "contract.sol":1947:1952  owner */
+      0x6
+      0x0
+      swap1
+      sload
+      swap1
+      0x100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":1933:1952  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":1933:1943  msg.sender */
+      caller
+        /* "contract.sol":1933:1952  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "contract.sol":1925:1953  require(msg.sender == owner) */
+      iszero
+      iszero
+      tag_68
+      jumpi
+      0x0
+      dup1
+      revert
+    tag_68:
+        /* "contract.sol":2183:2195  _totalSupply */
+      sload(0x3)
+        /* "contract.sol":2176:2195  return _totalSupply */
+      swap1
+      pop
+        /* "contract.sol":2102:2202  function totalSupply() public onlyOwner constant returns (uint) {... */
+      swap1
+      jump	// out
+        /* "contract.sol":3460:3967  function transferFrom(address _from, address _to, uint _value) external returns (bool) {... */
+    tag_30:
+        /* "contract.sol":3541:3545  bool */
+      0x0
+        /* "contract.sol":3594:3595  0 */
+      dup1
+        /* "contract.sol":3561:3572  _allowances */
+      0x5
+        /* "contract.sol":3561:3579  _allowances[_from] */
+      0x0
+        /* "contract.sol":3573:3578  _from */
+      dup7
+        /* "contract.sol":3561:3579  _allowances[_from] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+        /* "contract.sol":3561:3591  _allowances[_from][msg.sender] */
+      0x0
+        /* "contract.sol":3580:3590  msg.sender */
+      caller
+        /* "contract.sol":3561:3591  _allowances[_from][msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      sload
+        /* "contract.sol":3561:3595  _allowances[_from][msg.sender] > 0 */
+      gt
+        /* "contract.sol":3561:3621  _allowances[_from][msg.sender] > 0 &&... */
+      dup1
+      iszero
+      tag_71
+      jumpi
+      pop
+        /* "contract.sol":3620:3621  0 */
+      0x0
+        /* "contract.sol":3611:3617  _value */
+      dup3
+        /* "contract.sol":3611:3621  _value > 0 */
+      gt
+        /* "contract.sol":3561:3621  _allowances[_from][msg.sender] > 0 &&... */
+    tag_71:
+        /* "contract.sol":3561:3677  _allowances[_from][msg.sender] > 0 &&... */
+      dup1
+      iszero
+      tag_72
+      jumpi
+      pop
+        /* "contract.sol":3671:3677  _value */
+      dup2
+        /* "contract.sol":3637:3648  _allowances */
+      0x5
+        /* "contract.sol":3637:3655  _allowances[_from] */
+      0x0
+        /* "contract.sol":3649:3654  _from */
+      dup7
+        /* "contract.sol":3637:3655  _allowances[_from] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+        /* "contract.sol":3637:3667  _allowances[_from][msg.sender] */
+      0x0
+        /* "contract.sol":3656:3666  msg.sender */
+      caller
+        /* "contract.sol":3637:3667  _allowances[_from][msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      sload
+        /* "contract.sol":3637:3677  _allowances[_from][msg.sender] >= _value */
+      lt
+      iszero
+        /* "contract.sol":3561:3677  _allowances[_from][msg.sender] > 0 &&... */
+    tag_72:
+        /* "contract.sol":3561:3720  _allowances[_from][msg.sender] > 0 &&... */
+      dup1
+      iszero
+      tag_73
+      jumpi
+      pop
+        /* "contract.sol":3714:3720  _value */
+      dup2
+        /* "contract.sol":3693:3703  _balanceOf */
+      0x4
+        /* "contract.sol":3693:3710  _balanceOf[_from] */
+      0x0
+        /* "contract.sol":3704:3709  _from */
+      dup7
+        /* "contract.sol":3693:3710  _balanceOf[_from] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      sload
+        /* "contract.sol":3693:3720  _balanceOf[_from] >= _value */
+      lt
+      iszero
+        /* "contract.sol":3561:3720  _allowances[_from][msg.sender] > 0 &&... */
+    tag_73:
+        /* "contract.sol":3557:3939  if (_allowances[_from][msg.sender] > 0 &&... */
+      iszero
+      tag_74
+      jumpi
+        /* "contract.sol":3757:3763  _value */
+      dup2
+        /* "contract.sol":3736:3746  _balanceOf */
+      0x4
+        /* "contract.sol":3736:3753  _balanceOf[_from] */
+      0x0
+        /* "contract.sol":3747:3752  _from */
+      dup7
+        /* "contract.sol":3736:3753  _balanceOf[_from] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      0x0
+        /* "contract.sol":3736:3763  _balanceOf[_from] -= _value */
+      dup3
+      dup3
+      sload
+      sub
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":3796:3802  _value */
+      dup2
+        /* "contract.sol":3777:3787  _balanceOf */
+      0x4
+        /* "contract.sol":3777:3792  _balanceOf[_to] */
+      0x0
+        /* "contract.sol":3788:3791  _to */
+      dup6
+        /* "contract.sol":3777:3792  _balanceOf[_to] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      0x0
+        /* "contract.sol":3777:3802  _balanceOf[_to] += _value */
+      dup3
+      dup3
+      sload
+      add
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":3850:3856  _value */
+      dup2
+        /* "contract.sol":3816:3827  _allowances */
+      0x5
+        /* "contract.sol":3816:3834  _allowances[_from] */
+      0x0
+        /* "contract.sol":3828:3833  _from */
+      dup7
+        /* "contract.sol":3816:3834  _allowances[_from] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+        /* "contract.sol":3816:3846  _allowances[_from][msg.sender] */
+      0x0
+        /* "contract.sol":3835:3845  msg.sender */
+      caller
+        /* "contract.sol":3816:3846  _allowances[_from][msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      0x0
+        /* "contract.sol":3816:3856  _allowances[_from][msg.sender] -= _value */
+      dup3
+      dup3
+      sload
+      sub
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":3891:3894  _to */
+      dup3
+        /* "contract.sol":3875:3903  Transfer(_from, _to, _value) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":3884:3889  _from */
+      dup5
+        /* "contract.sol":3875:3903  Transfer(_from, _to, _value) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+        /* "contract.sol":3896:3902  _value */
+      dup5
+        /* "contract.sol":3875:3903  Transfer(_from, _to, _value) */
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      log3
+        /* "contract.sol":3924:3928  true */
+      0x1
+        /* "contract.sol":3917:3928  return true */
+      swap1
+      pop
+      jump(tag_70)
+        /* "contract.sol":3557:3939  if (_allowances[_from][msg.sender] > 0 &&... */
+    tag_74:
+        /* "contract.sol":3955:3960  false */
+      0x0
+        /* "contract.sol":3948:3960  return false */
+      swap1
+      pop
+        /* "contract.sol":3460:3967  function transferFrom(address _from, address _to, uint _value) external returns (bool) {... */
+    tag_70:
+      swap4
+      swap3
+      pop
+      pop
+      pop
+      jump	// out
+        /* "contract.sol":1374:1459  function decimals() public constant returns (uint8) {... */
+    tag_33:
+        /* "contract.sol":1419:1424  uint8 */
+      0x0
+        /* "contract.sol":1443:1452  _decimals */
+      0x2
+      0x0
+      swap1
+      sload
+      swap1
+      0x100
+      exp
+      swap1
+      div
+      0xff
+      and
+        /* "contract.sol":1436:1452  return _decimals */
+      swap1
+      pop
+        /* "contract.sol":1374:1459  function decimals() public constant returns (uint8) {... */
+      swap1
+      jump	// out
+        /* "contract.sol":4343:4431  function addSupply(uint amount) public onlyOwner {... */
+    tag_36:
+        /* "contract.sol":1947:1952  owner */
+      0x6
+      0x0
+      swap1
+      sload
+      swap1
+      0x100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":1933:1952  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":1933:1943  msg.sender */
+      caller
+        /* "contract.sol":1933:1952  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "contract.sol":1925:1953  require(msg.sender == owner) */
+      iszero
+      iszero
+      tag_77
+      jumpi
+      0x0
+      dup1
+      revert
+    tag_77:
+        /* "contract.sol":4418:4424  amount */
+      dup1
+        /* "contract.sol":4402:4414  _totalSupply */
+      0x3
+      0x0
+        /* "contract.sol":4402:4424  _totalSupply += amount */
+      dup3
+      dup3
+      sload
+      add
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":4343:4431  function addSupply(uint amount) public onlyOwner {... */
+      pop
+      jump	// out
+        /* "contract.sol":4653:4787  function kill() public { //self-destruct function, ... */
+    tag_39:
+        /* "contract.sol":4729:4734  owner */
+      0x6
+      0x0
+      swap1
+      sload
+      swap1
+      0x100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":4715:4734  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":4715:4725  msg.sender */
+      caller
+        /* "contract.sol":4715:4734  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "contract.sol":4712:4781  if(msg.sender == owner) {... */
+      iszero
+      tag_80
+      jumpi
+        /* "contract.sol":4763:4768  owner */
+      0x6
+      0x0
+      swap1
+      sload
+      swap1
+      0x100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":4750:4769  selfdestruct(owner) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      selfdestruct
+        /* "contract.sol":4712:4781  if(msg.sender == owner) {... */
+    tag_80:
+        /* "contract.sol":4653:4787  function kill() public { //self-destruct function, ... */
+      jump	// out
+        /* "contract.sol":2212:2328  function balanceOf(address _addr) public onlyOwner constant returns (uint) {... */
+    tag_42:
+        /* "contract.sol":2281:2285  uint */
+      0x0
+        /* "contract.sol":1947:1952  owner */
+      0x6
+      0x0
+      swap1
+      sload
+      swap1
+      0x100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":1933:1952  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":1933:1943  msg.sender */
+      caller
+        /* "contract.sol":1933:1952  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "contract.sol":1925:1953  require(msg.sender == owner) */
+      iszero
+      iszero
+      tag_82
+      jumpi
+      0x0
+      dup1
+      revert
+    tag_82:
+        /* "contract.sol":2304:2314  _balanceOf */
+      0x4
+        /* "contract.sol":2304:2321  _balanceOf[_addr] */
+      0x0
+        /* "contract.sol":2315:2320  _addr */
+      dup4
+        /* "contract.sol":2304:2321  _balanceOf[_addr] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      sload
+        /* "contract.sol":2297:2321  return _balanceOf[_addr] */
+      swap1
+      pop
+        /* "contract.sol":2212:2328  function balanceOf(address _addr) public onlyOwner constant returns (uint) {... */
+      swap2
+      swap1
+      pop
+      jump	// out
+        /* "contract.sol":1282:1364  function symbol() public constant returns (string) {... */
+    tag_45:
+        /* "contract.sol":1325:1331  string */
+      0x60
+        /* "contract.sol":1350:1357  _symbol */
+      0x0
+        /* "contract.sol":1343:1357  return _symbol */
+      dup1
+      sload
+      0x1
+      dup2
+      0x1
+      and
+      iszero
+      0x100
+      mul
+      sub
+      and
+      0x2
+      swap1
+      div
+      dup1
+      0x1f
+      add
+      0x20
+      dup1
+      swap2
+      div
+      mul
+      0x20
+      add
+      mload(0x40)
+      swap1
+      dup2
+      add
+      0x40
+      mstore
+      dup1
+      swap3
+      swap2
+      swap1
+      dup2
+      dup2
+      mstore
+      0x20
+      add
+      dup3
+      dup1
+      sload
+      0x1
+      dup2
+      0x1
+      and
+      iszero
+      0x100
+      mul
+      sub
+      and
+      0x2
+      swap1
+      div
+      dup1
+      iszero
+      tag_85
+      jumpi
+      dup1
+      0x1f
+      lt
+      tag_86
+      jumpi
+      0x100
+      dup1
+      dup4
+      sload
+      div
+      mul
+      dup4
+      mstore
+      swap2
+      0x20
+      add
+      swap2
+      jump(tag_85)
+    tag_86:
+      dup3
+      add
+      swap2
+      swap1
+      0x0
+      mstore
+      keccak256(0x0, 0x20)
+      swap1
+    tag_87:
+      dup2
+      sload
+      dup2
+      mstore
+      swap1
+      0x1
+      add
+      swap1
+      0x20
+      add
+      dup1
+      dup4
+      gt
+      tag_87
+      jumpi
+      dup3
+      swap1
+      sub
+      0x1f
+      and
+      dup3
+      add
+      swap2
+    tag_85:
+      pop
+      pop
+      pop
+      pop
+      pop
+      swap1
+      pop
+        /* "contract.sol":1282:1364  function symbol() public constant returns (string) {... */
+      swap1
+      jump	// out
+        /* "contract.sol":1981:2092  function contructor() public {... */
+    tag_52:
+        /* "contract.sol":2028:2038  msg.sender */
+      caller
+        /* "contract.sol":2020:2025  owner */
+      0x6
+      0x0
+        /* "contract.sol":2020:2038  owner = msg.sender */
+      0x100
+      exp
+      dup2
+      sload
+      dup2
+      0xffffffffffffffffffffffffffffffffffffffff
+      mul
+      not
+      and
+      swap1
+      dup4
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      mul
+      or
+      swap1
+      sstore
+      pop
+        /* "contract.sol":2073:2085  _totalSupply */
+      sload(0x3)
+        /* "contract.sol":2048:2058  _balanceOf */
+      0x4
+        /* "contract.sol":2048:2070  _balanceOf[msg.sender] */
+      0x0
+        /* "contract.sol":2059:2069  msg.sender */
+      caller
+        /* "contract.sol":2048:2070  _balanceOf[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+        /* "contract.sol":2048:2085  _balanceOf[msg.sender] = _totalSupply */
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":1981:2092  function contructor() public {... */
+      jump	// out
+        /* "contract.sol":2334:2708  function transfer(address _to, uint _value) public returns (bool) {... */
+    tag_55:
+        /* "contract.sol":2394:2398  bool */
+      0x0
+        /* "contract.sol":2423:2424  0 */
+      dup1
+        /* "contract.sol":2414:2420  _value */
+      dup3
+        /* "contract.sol":2414:2424  _value > 0 */
+      gt
+        /* "contract.sol":2414:2473  _value > 0 && ... */
+      dup1
+      iszero
+      tag_90
+      jumpi
+      pop
+        /* "contract.sol":2451:2461  _balanceOf */
+      0x4
+        /* "contract.sol":2451:2473  _balanceOf[msg.sender] */
+      0x0
+        /* "contract.sol":2462:2472  msg.sender */
+      caller
+        /* "contract.sol":2451:2473  _balanceOf[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      sload
+        /* "contract.sol":2441:2447  _value */
+      dup3
+        /* "contract.sol":2441:2473  _value <= _balanceOf[msg.sender] */
+      gt
+      iszero
+        /* "contract.sol":2414:2473  _value > 0 && ... */
+    tag_90:
+        /* "contract.sol":2414:2505  _value > 0 && ... */
+      dup1
+      iszero
+      tag_91
+      jumpi
+      pop
+        /* "contract.sol":2490:2505  isContract(_to) */
+      tag_92
+        /* "contract.sol":2501:2504  _to */
+      dup4
+        /* "contract.sol":2490:2500  isContract */
+      tag_93
+        /* "contract.sol":2490:2505  isContract(_to) */
+      jump	// in
+    tag_92:
+        /* "contract.sol":2489:2505  !isContract(_to) */
+      iszero
+        /* "contract.sol":2414:2505  _value > 0 && ... */
+    tag_91:
+        /* "contract.sol":2410:2680  if (_value > 0 && ... */
+      iszero
+      tag_94
+      jumpi
+        /* "contract.sol":2547:2553  _value */
+      dup2
+        /* "contract.sol":2521:2531  _balanceOf */
+      0x4
+        /* "contract.sol":2521:2543  _balanceOf[msg.sender] */
+      0x0
+        /* "contract.sol":2532:2542  msg.sender */
+      caller
+        /* "contract.sol":2521:2543  _balanceOf[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      0x0
+        /* "contract.sol":2521:2553  _balanceOf[msg.sender] -= _value */
+      dup3
+      dup3
+      sload
+      sub
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":2586:2592  _value */
+      dup2
+        /* "contract.sol":2567:2577  _balanceOf */
+      0x4
+        /* "contract.sol":2567:2582  _balanceOf[_to] */
+      0x0
+        /* "contract.sol":2578:2581  _to */
+      dup6
+        /* "contract.sol":2567:2582  _balanceOf[_to] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      0x0
+        /* "contract.sol":2567:2592  _balanceOf[_to] += _value */
+      dup3
+      dup3
+      sload
+      add
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":2632:2635  _to */
+      dup3
+        /* "contract.sol":2611:2644  Transfer(msg.sender, _to, _value) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":2620:2630  msg.sender */
+      caller
+        /* "contract.sol":2611:2644  Transfer(msg.sender, _to, _value) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+        /* "contract.sol":2637:2643  _value */
+      dup5
+        /* "contract.sol":2611:2644  Transfer(msg.sender, _to, _value) */
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      log3
+        /* "contract.sol":2665:2669  true */
+      0x1
+        /* "contract.sol":2658:2669  return true */
+      swap1
+      pop
+      jump(tag_89)
+        /* "contract.sol":2410:2680  if (_value > 0 && ... */
+    tag_94:
+        /* "contract.sol":2696:2701  false */
+      0x0
+        /* "contract.sol":2689:2701  return false */
+      swap1
+      pop
+        /* "contract.sol":2334:2708  function transfer(address _to, uint _value) public returns (bool) {... */
+    tag_89:
+      swap3
+      swap2
+      pop
+      pop
+      jump	// out
+        /* "contract.sol":2714:3253  function transfer(address _to, uint _value, bytes _data) public returns (bool) {... */
+    tag_58:
+        /* "contract.sol":2787:2791  bool */
+      0x0
+        /* "contract.sol":2998:3031  ERC223ReceivingContract _contract */
+      dup1
+        /* "contract.sol":2816:2817  0 */
+      0x0
+        /* "contract.sol":2807:2813  _value */
+      dup5
+        /* "contract.sol":2807:2817  _value > 0 */
+      gt
+        /* "contract.sol":2807:2866  _value > 0 && ... */
+      dup1
+      iszero
+      tag_96
+      jumpi
+      pop
+        /* "contract.sol":2844:2854  _balanceOf */
+      0x4
+        /* "contract.sol":2844:2866  _balanceOf[msg.sender] */
+      0x0
+        /* "contract.sol":2855:2865  msg.sender */
+      caller
+        /* "contract.sol":2844:2866  _balanceOf[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      sload
+        /* "contract.sol":2834:2840  _value */
+      dup5
+        /* "contract.sol":2834:2866  _value <= _balanceOf[msg.sender] */
+      gt
+      iszero
+        /* "contract.sol":2807:2866  _value > 0 && ... */
+    tag_96:
+        /* "contract.sol":2807:2897  _value > 0 && ... */
+      dup1
+      iszero
+      tag_97
+      jumpi
+      pop
+        /* "contract.sol":2882:2897  isContract(_to) */
+      tag_98
+        /* "contract.sol":2893:2896  _to */
+      dup6
+        /* "contract.sol":2882:2892  isContract */
+      tag_93
+        /* "contract.sol":2882:2897  isContract(_to) */
+      jump	// in
+    tag_98:
+        /* "contract.sol":2807:2897  _value > 0 && ... */
+    tag_97:
+        /* "contract.sol":2803:3225  if (_value > 0 && ... */
+      iszero
+      tag_99
+      jumpi
+        /* "contract.sol":2939:2945  _value */
+      dup4
+        /* "contract.sol":2913:2923  _balanceOf */
+      0x4
+        /* "contract.sol":2913:2935  _balanceOf[msg.sender] */
+      0x0
+        /* "contract.sol":2924:2934  msg.sender */
+      caller
+        /* "contract.sol":2913:2935  _balanceOf[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      0x0
+        /* "contract.sol":2913:2945  _balanceOf[msg.sender] -= _value */
+      dup3
+      dup3
+      sload
+      sub
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":2978:2984  _value */
+      dup4
+        /* "contract.sol":2959:2969  _balanceOf */
+      0x4
+        /* "contract.sol":2959:2974  _balanceOf[_to] */
+      0x0
+        /* "contract.sol":2970:2973  _to */
+      dup8
+        /* "contract.sol":2959:2974  _balanceOf[_to] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      0x0
+        /* "contract.sol":2959:2984  _balanceOf[_to] += _value */
+      dup3
+      dup3
+      sload
+      add
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "contract.sol":3058:3061  _to */
+      dup5
+        /* "contract.sol":2998:3062  ERC223ReceivingContract _contract = ERC223ReceivingContract(_to) */
+      swap1
+      pop
+        /* "contract.sol":3080:3089  _contract */
+      dup1
+        /* "contract.sol":3080:3103  _contract.tokenFallback */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xc0ee0b8a
+        /* "contract.sol":3104:3114  msg.sender */
+      caller
+        /* "contract.sol":3116:3122  _value */
+      dup7
+        /* "contract.sol":3124:3129  _data */
+      dup7
+        /* "contract.sol":3080:3130  _contract.tokenFallback(msg.sender, _value, _data) */
+      mload(0x40)
+      dup5
+      0xffffffff
+      and
+      0x100000000000000000000000000000000000000000000000000000000
+      mul
+      dup2
+      mstore
+      0x4
+      add
+      dup1
+      dup5
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      dup4
+      dup2
+      mstore
+      0x20
+      add
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      dup4
+      dup2
+      dup2
+      mload
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      dup1
+      mload
+      swap1
+      0x20
+      add
+      swap1
+      dup1
+      dup4
+      dup4
+        /* "--CODEGEN--":23:24   */
+      0x0
+        /* "--CODEGEN--":8:108   */
+    tag_100:
+        /* "--CODEGEN--":33:36   */
+      dup4
+        /* "--CODEGEN--":30:31   */
+      dup2
+        /* "--CODEGEN--":27:37   */
+      lt
+        /* "--CODEGEN--":8:108   */
+      iszero
+      tag_101
+      jumpi
+        /* "--CODEGEN--":99:100   */
+      dup1
+        /* "--CODEGEN--":94:97   */
+      dup3
+        /* "--CODEGEN--":90:101   */
+      add
+        /* "--CODEGEN--":84:102   */
+      mload
+        /* "--CODEGEN--":80:81   */
+      dup2
+        /* "--CODEGEN--":75:78   */
+      dup5
+        /* "--CODEGEN--":71:82   */
+      add
+        /* "--CODEGEN--":64:103   */
+      mstore
+        /* "--CODEGEN--":52:54   */
+      0x20
+        /* "--CODEGEN--":49:50   */
+      dup2
+        /* "--CODEGEN--":45:55   */
+      add
+        /* "--CODEGEN--":40:55   */
+      swap1
+      pop
+        /* "--CODEGEN--":8:108   */
+      jump(tag_100)
+    tag_101:
+        /* "--CODEGEN--":12:26   */
+      pop
+        /* "contract.sol":3080:3130  _contract.tokenFallback(msg.sender, _value, _data) */
+      pop
+      pop
+      pop
+      swap1
+      pop
+      swap1
+      dup2
+      add
+      swap1
+      0x1f
+      and
+      dup1
+      iszero
+      tag_103
+      jumpi
+      dup1
+      dup3
+      sub
+      dup1
+      mload
+      0x1
+      dup4
+      0x20
+      sub
+      0x100
+      exp
+      sub
+      not
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+    tag_103:
+      pop
+      swap5
+      pop
+      pop
+      pop
+      pop
+      pop
+      0x0
+      mload(0x40)
+      dup1
+      dup4
+      sub
+      dup2
+      0x0
+      dup8
+      dup1
+      extcodesize
+      iszero
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_104
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_104:
+        /* "contract.sol":3080:3130  _contract.tokenFallback(msg.sender, _value, _data) */
+      pop
+      gas
+      call
+      iszero
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_105
+      jumpi
+        /* "--CODEGEN--":45:61   */
+      returndatasize
+        /* "--CODEGEN--":42:43   */
+      0x0
+        /* "--CODEGEN--":39:40   */
+      dup1
+        /* "--CODEGEN--":24:62   */
+      returndatacopy
+        /* "--CODEGEN--":77:93   */
+      returndatasize
+        /* "--CODEGEN--":74:75   */
+      0x0
+        /* "--CODEGEN--":67:94   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_105:
+        /* "contract.sol":3080:3130  _contract.tokenFallback(msg.sender, _value, _data) */
+      pop
+      pop
+      pop
+      pop
+        /* "contract.sol":3183:3188  _data */
+      dup3
+        /* "contract.sol":3149:3189  Transfer(msg.sender, _to, _value, _data) */
+      mload(0x40)
+      dup1
+      dup3
+      dup1
+      mload
+      swap1
+      0x20
+      add
+      swap1
+      dup1
+      dup4
+      dup4
+        /* "--CODEGEN--":36:189   */
+    tag_106:
+        /* "--CODEGEN--":66:68   */
+      0x20
+        /* "--CODEGEN--":61:64   */
+      dup4
+        /* "--CODEGEN--":58:69   */
+      lt
+        /* "--CODEGEN--":51:70   */
+      iszero
+        /* "--CODEGEN--":36:189   */
+      iszero
+      tag_107
+      jumpi
+        /* "--CODEGEN--":182:185   */
+      dup1
+        /* "--CODEGEN--":176:186   */
+      mload
+        /* "--CODEGEN--":171:174   */
+      dup3
+        /* "--CODEGEN--":164:187   */
+      mstore
+        /* "--CODEGEN--":98:100   */
+      0x20
+        /* "--CODEGEN--":93:96   */
+      dup3
+        /* "--CODEGEN--":89:101   */
+      add
+        /* "--CODEGEN--":82:101   */
+      swap2
+      pop
+        /* "--CODEGEN--":123:125   */
+      0x20
+        /* "--CODEGEN--":118:121   */
+      dup2
+        /* "--CODEGEN--":114:126   */
+      add
+        /* "--CODEGEN--":107:126   */
+      swap1
+      pop
+        /* "--CODEGEN--":148:150   */
+      0x20
+        /* "--CODEGEN--":143:146   */
+      dup4
+        /* "--CODEGEN--":139:151   */
+      sub
+        /* "--CODEGEN--":132:151   */
+      swap3
+      pop
+        /* "--CODEGEN--":36:189   */
+      jump(tag_106)
+    tag_107:
+        /* "--CODEGEN--":274:275   */
+      0x1
+        /* "--CODEGEN--":267:270   */
+      dup4
+        /* "--CODEGEN--":263:265   */
+      0x20
+        /* "--CODEGEN--":259:271   */
+      sub
+        /* "--CODEGEN--":254:257   */
+      0x100
+        /* "--CODEGEN--":250:272   */
+      exp
+        /* "--CODEGEN--":246:276   */
+      sub
+        /* "--CODEGEN--":315:319   */
+      dup1
+        /* "--CODEGEN--":311:320   */
+      not
+        /* "--CODEGEN--":305:308   */
+      dup3
+        /* "--CODEGEN--":299:309   */
+      mload
+        /* "--CODEGEN--":295:321   */
+      and
+        /* "--CODEGEN--":356:360   */
+      dup2
+        /* "--CODEGEN--":350:353   */
+      dup5
+        /* "--CODEGEN--":344:354   */
+      mload
+        /* "--CODEGEN--":340:361   */
+      and
+        /* "--CODEGEN--":389:396   */
+      dup1
+        /* "--CODEGEN--":380:387   */
+      dup3
+        /* "--CODEGEN--":377:397   */
+      or
+        /* "--CODEGEN--":372:375   */
+      dup6
+        /* "--CODEGEN--":365:398   */
+      mstore
+        /* "--CODEGEN--":3:402   */
+      pop
+      pop
+      pop
+        /* "contract.sol":3149:3189  Transfer(msg.sender, _to, _value, _data) */
+      pop
+      pop
+      pop
+      swap1
+      pop
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      keccak256
+        /* "contract.sol":3170:3173  _to */
+      dup6
+        /* "contract.sol":3149:3189  Transfer(msg.sender, _to, _value, _data) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":3158:3168  msg.sender */
+      caller
+        /* "contract.sol":3149:3189  Transfer(msg.sender, _to, _value, _data) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xe19260aff97b920c7df27010903aeb9c8d2be5d310a2c67824cf3f15396e4c16
+        /* "contract.sol":3175:3181  _value */
+      dup8
+        /* "contract.sol":3149:3189  Transfer(msg.sender, _to, _value, _data) */
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      log4
+        /* "contract.sol":3210:3214  true */
+      0x1
+        /* "contract.sol":3203:3214  return true */
+      swap2
+      pop
+      jump(tag_95)
+        /* "contract.sol":2803:3225  if (_value > 0 && ... */
+    tag_99:
+        /* "contract.sol":3241:3246  false */
+      0x0
+        /* "contract.sol":3234:3246  return false */
+      swap2
+      pop
+        /* "contract.sol":2714:3253  function transfer(address _to, uint _value, bytes _data) public returns (bool) {... */
+    tag_95:
+      pop
+      swap4
+      swap3
+      pop
+      pop
+      pop
+      jump	// out
+        /* "contract.sol":4192:4333  function allowance(address _owner, address _spender) external constant returns (uint) {  ... */
+    tag_61:
+        /* "contract.sol":4272:4276  uint */
+      0x0
+        /* "contract.sol":4297:4308  _allowances */
+      0x5
+        /* "contract.sol":4297:4316  _allowances[_owner] */
+      0x0
+        /* "contract.sol":4309:4315  _owner */
+      dup5
+        /* "contract.sol":4297:4316  _allowances[_owner] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+        /* "contract.sol":4297:4326  _allowances[_owner][_spender] */
+      0x0
+        /* "contract.sol":4317:4325  _spender */
+      dup4
+        /* "contract.sol":4297:4326  _allowances[_owner][_spender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x0
+      keccak256
+      sload
+        /* "contract.sol":4290:4326  return _allowances[_owner][_spender] */
+      swap1
+      pop
+        /* "contract.sol":4192:4333  function allowance(address _owner, address _spender) external constant returns (uint) {  ... */
+      swap3
+      swap2
+      pop
+      pop
+      jump	// out
+        /* "contract.sol":3259:3454  function isContract(address _addr) internal view returns (bool) {... */
+    tag_93:
+        /* "contract.sol":3317:3321  bool */
+      0x0
+        /* "contract.sol":3333:3346  uint codeSize */
+      dup1
+        /* "contract.sol":3403:3408  _addr */
+      dup3
+        /* "contract.sol":3391:3409  extcodesize(_addr) */
+      extcodesize
+        /* "contract.sol":3379:3409  codeSize := extcodesize(_addr) */
+      swap1
+      pop
+        /* "contract.sol":3446:3447  0 */
+      0x0
+        /* "contract.sol":3435:3443  codeSize */
+      dup2
+        /* "contract.sol":3435:3447  codeSize > 0 */
+      gt
+        /* "contract.sol":3428:3447  return codeSize > 0 */
+      swap2
+      pop
+        /* "contract.sol":3259:3454  function isContract(address _addr) internal view returns (bool) {... */
+      pop
+      swap2
+      swap1
+      pop
+      jump	// out
+
+    auxdata: 0xa165627a7a72305820daa3586955d16caee9220a9f2bc7f19eebe1e17b78fed76765397a4747326d320029
+}

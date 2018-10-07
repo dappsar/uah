@@ -1,0 +1,875 @@
+    /* "contract.sol":26:679  contract Greeter {... */
+  mstore(0x40, 0x80)
+    /* "contract.sol":192:294  constructor(string _greeting) public {... */
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x0
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "contract.sol":192:294  constructor(string _greeting) public {... */
+  pop
+  mload(0x40)
+  sub(codesize, bytecodeSize)
+  dup1
+  bytecodeSize
+  dup4
+  codecopy
+  dup2
+  add
+  dup1
+  0x40
+  mstore
+  dup2
+  add
+  swap1
+  dup1
+  dup1
+  mload
+  dup3
+  add
+  swap3
+  swap2
+  swap1
+  pop
+  pop
+  pop
+    /* "contract.sol":250:259  _greeting */
+  dup1
+    /* "contract.sol":239:247  greeting */
+  0x0
+    /* "contract.sol":239:259  greeting = _greeting */
+  swap1
+  dup1
+  mload
+  swap1
+  0x20
+  add
+  swap1
+  tag_4
+  swap3
+  swap2
+  swap1
+  jump	// in(tag_5)
+tag_4:
+  pop
+    /* "contract.sol":277:287  msg.sender */
+  caller
+    /* "contract.sol":269:274  owner */
+  0x1
+  0x0
+    /* "contract.sol":269:287  owner = msg.sender */
+  0x100
+  exp
+  dup2
+  sload
+  dup2
+  0xffffffffffffffffffffffffffffffffffffffff
+  mul
+  not
+  and
+  swap1
+  dup4
+  0xffffffffffffffffffffffffffffffffffffffff
+  and
+  mul
+  or
+  swap1
+  sstore
+  pop
+    /* "contract.sol":192:294  constructor(string _greeting) public {... */
+  pop
+    /* "contract.sol":26:679  contract Greeter {... */
+  jump(tag_6)
+tag_5:
+  dup3
+  dup1
+  sload
+  0x1
+  dup2
+  0x1
+  and
+  iszero
+  0x100
+  mul
+  sub
+  and
+  0x2
+  swap1
+  div
+  swap1
+  0x0
+  mstore
+  keccak256(0x0, 0x20)
+  swap1
+  0x1f
+  add
+  0x20
+  swap1
+  div
+  dup2
+  add
+  swap3
+  dup3
+  0x1f
+  lt
+  tag_8
+  jumpi
+  dup1
+  mload
+  not(0xff)
+  and
+  dup4
+  dup1
+  add
+  or
+  dup6
+  sstore
+  jump(tag_7)
+tag_8:
+  dup3
+  dup1
+  add
+  0x1
+  add
+  dup6
+  sstore
+  dup3
+  iszero
+  tag_7
+  jumpi
+  swap2
+  dup3
+  add
+tag_9:
+  dup3
+  dup2
+  gt
+  iszero
+  tag_10
+  jumpi
+  dup3
+  mload
+  dup3
+  sstore
+  swap2
+  0x20
+  add
+  swap2
+  swap1
+  0x1
+  add
+  swap1
+  jump(tag_9)
+tag_10:
+tag_7:
+  pop
+  swap1
+  pop
+  tag_11
+  swap2
+  swap1
+  jump	// in(tag_12)
+tag_11:
+  pop
+  swap1
+  jump	// out
+tag_12:
+  tag_13
+  swap2
+  swap1
+tag_14:
+  dup1
+  dup3
+  gt
+  iszero
+  tag_15
+  jumpi
+  0x0
+  dup2
+  0x0
+  swap1
+  sstore
+  pop
+  0x1
+  add
+  jump(tag_14)
+tag_15:
+  pop
+  swap1
+  jump
+tag_13:
+  swap1
+  jump	// out
+tag_6:
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x0
+  codecopy
+  0x0
+  return
+stop
+
+sub_0: assembly {
+        /* "contract.sol":26:679  contract Greeter {... */
+      mstore(0x40, 0x80)
+      jumpi(tag_1, lt(calldatasize, 0x4))
+      calldataload(0x0)
+      0x100000000000000000000000000000000000000000000000000000000
+      swap1
+      div
+      0xffffffff
+      and
+      dup1
+      0xa4136862
+      eq
+      tag_2
+      jumpi
+      dup1
+      0xef5fb05b
+      eq
+      tag_3
+      jumpi
+    tag_1:
+      0x0
+      dup1
+      revert
+        /* "contract.sol":475:574  function setGreeting(string _newGreeting) public onlyOwner {... */
+    tag_2:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_4
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_4:
+        /* "contract.sol":475:574  function setGreeting(string _newGreeting) public onlyOwner {... */
+      pop
+      tag_5
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      dup3
+      add
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      dup1
+      dup1
+      0x1f
+      add
+      0x20
+      dup1
+      swap2
+      div
+      mul
+      0x20
+      add
+      mload(0x40)
+      swap1
+      dup2
+      add
+      0x40
+      mstore
+      dup1
+      swap4
+      swap3
+      swap2
+      swap1
+      dup2
+      dup2
+      mstore
+      0x20
+      add
+      dup4
+      dup4
+      dup1
+      dup3
+      dup5
+      calldatacopy
+      dup3
+      add
+      swap2
+      pop
+      pop
+      pop
+      pop
+      pop
+      pop
+      swap2
+      swap3
+      swap2
+      swap3
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_6)
+    tag_5:
+      stop
+        /* "contract.sol":300:469  function sayHello() public view returns(string) {... */
+    tag_3:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_7
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_7:
+        /* "contract.sol":300:469  function sayHello() public view returns(string) {... */
+      pop
+      tag_8
+      jump(tag_9)
+    tag_8:
+      mload(0x40)
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      dup4
+      dup2
+      dup2
+      mload
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      dup1
+      mload
+      swap1
+      0x20
+      add
+      swap1
+      dup1
+      dup4
+      dup4
+        /* "--CODEGEN--":23:24   */
+      0x0
+        /* "--CODEGEN--":8:108   */
+    tag_10:
+        /* "--CODEGEN--":33:36   */
+      dup4
+        /* "--CODEGEN--":30:31   */
+      dup2
+        /* "--CODEGEN--":27:37   */
+      lt
+        /* "--CODEGEN--":8:108   */
+      iszero
+      tag_11
+      jumpi
+        /* "--CODEGEN--":99:100   */
+      dup1
+        /* "--CODEGEN--":94:97   */
+      dup3
+        /* "--CODEGEN--":90:101   */
+      add
+        /* "--CODEGEN--":84:102   */
+      mload
+        /* "--CODEGEN--":80:81   */
+      dup2
+        /* "--CODEGEN--":75:78   */
+      dup5
+        /* "--CODEGEN--":71:82   */
+      add
+        /* "--CODEGEN--":64:103   */
+      mstore
+        /* "--CODEGEN--":52:54   */
+      0x20
+        /* "--CODEGEN--":49:50   */
+      dup2
+        /* "--CODEGEN--":45:55   */
+      add
+        /* "--CODEGEN--":40:55   */
+      swap1
+      pop
+        /* "--CODEGEN--":8:108   */
+      jump(tag_10)
+    tag_11:
+        /* "--CODEGEN--":12:26   */
+      pop
+        /* "contract.sol":300:469  function sayHello() public view returns(string) {... */
+      pop
+      pop
+      pop
+      swap1
+      pop
+      swap1
+      dup2
+      add
+      swap1
+      0x1f
+      and
+      dup1
+      iszero
+      tag_13
+      jumpi
+      dup1
+      dup3
+      sub
+      dup1
+      mload
+      0x1
+      dup4
+      0x20
+      sub
+      0x100
+      exp
+      sub
+      not
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+    tag_13:
+      pop
+      swap3
+      pop
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "contract.sol":475:574  function setGreeting(string _newGreeting) public onlyOwner {... */
+    tag_6:
+        /* "contract.sol":127:136  isOwner() */
+      tag_15
+        /* "contract.sol":127:134  isOwner */
+      tag_16
+        /* "contract.sol":127:136  isOwner() */
+      jump	// in
+    tag_15:
+        /* "contract.sol":119:164  require(isOwner(), "Only owner can do that!") */
+      iszero
+      iszero
+      tag_17
+      jumpi
+      mload(0x40)
+      0x8c379a000000000000000000000000000000000000000000000000000000000
+      dup2
+      mstore
+      0x4
+      add
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      0x17
+      dup2
+      mstore
+      0x20
+      add
+      dup1
+      0x4f6e6c79206f776e65722063616e20646f207468617421000000000000000000
+      dup2
+      mstore
+      pop
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      revert
+    tag_17:
+        /* "contract.sol":555:567  _newGreeting */
+      dup1
+        /* "contract.sol":544:552  greeting */
+      0x0
+        /* "contract.sol":544:567  greeting = _newGreeting */
+      swap1
+      dup1
+      mload
+      swap1
+      0x20
+      add
+      swap1
+      tag_19
+      swap3
+      swap2
+      swap1
+      jump	// in(tag_20)
+    tag_19:
+      pop
+        /* "contract.sol":475:574  function setGreeting(string _newGreeting) public onlyOwner {... */
+      pop
+      jump	// out
+        /* "contract.sol":300:469  function sayHello() public view returns(string) {... */
+    tag_9:
+        /* "contract.sol":340:346  string */
+      0x60
+        /* "contract.sol":362:371  isOwner() */
+      tag_22
+        /* "contract.sol":362:369  isOwner */
+      tag_16
+        /* "contract.sol":362:371  isOwner() */
+      jump	// in
+    tag_22:
+        /* "contract.sol":358:463  if (isOwner()) {... */
+      iszero
+      tag_23
+      jumpi
+        /* "contract.sol":387:406  return "Hey daddy!" */
+      0x40
+      dup1
+      mload
+      swap1
+      dup2
+      add
+      0x40
+      mstore
+      dup1
+      0xa
+      dup2
+      mstore
+      0x20
+      add
+      0x4865792064616464792100000000000000000000000000000000000000000000
+      dup2
+      mstore
+      pop
+      swap1
+      pop
+      jump(tag_21)
+        /* "contract.sol":358:463  if (isOwner()) {... */
+    tag_23:
+        /* "contract.sol":444:452  greeting */
+      0x0
+        /* "contract.sol":437:452  return greeting */
+      dup1
+      sload
+      0x1
+      dup2
+      0x1
+      and
+      iszero
+      0x100
+      mul
+      sub
+      and
+      0x2
+      swap1
+      div
+      dup1
+      0x1f
+      add
+      0x20
+      dup1
+      swap2
+      div
+      mul
+      0x20
+      add
+      mload(0x40)
+      swap1
+      dup2
+      add
+      0x40
+      mstore
+      dup1
+      swap3
+      swap2
+      swap1
+      dup2
+      dup2
+      mstore
+      0x20
+      add
+      dup3
+      dup1
+      sload
+      0x1
+      dup2
+      0x1
+      and
+      iszero
+      0x100
+      mul
+      sub
+      and
+      0x2
+      swap1
+      div
+      dup1
+      iszero
+      tag_25
+      jumpi
+      dup1
+      0x1f
+      lt
+      tag_26
+      jumpi
+      0x100
+      dup1
+      dup4
+      sload
+      div
+      mul
+      dup4
+      mstore
+      swap2
+      0x20
+      add
+      swap2
+      jump(tag_25)
+    tag_26:
+      dup3
+      add
+      swap2
+      swap1
+      0x0
+      mstore
+      keccak256(0x0, 0x20)
+      swap1
+    tag_27:
+      dup2
+      sload
+      dup2
+      mstore
+      swap1
+      0x1
+      add
+      swap1
+      0x20
+      add
+      dup1
+      dup4
+      gt
+      tag_27
+      jumpi
+      dup3
+      swap1
+      sub
+      0x1f
+      and
+      dup3
+      add
+      swap2
+    tag_25:
+      pop
+      pop
+      pop
+      pop
+      pop
+      swap1
+      pop
+        /* "contract.sol":300:469  function sayHello() public view returns(string) {... */
+    tag_21:
+      swap1
+      jump	// out
+        /* "contract.sol":584:677  function isOwner() view private returns(bool) {... */
+    tag_16:
+        /* "contract.sol":624:628  bool */
+      0x0
+        /* "contract.sol":661:666  owner */
+      0x1
+      0x0
+      swap1
+      sload
+      swap1
+      0x100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":647:666  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "contract.sol":647:657  msg.sender */
+      caller
+        /* "contract.sol":647:666  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "contract.sol":640:666  return msg.sender == owner */
+      swap1
+      pop
+        /* "contract.sol":584:677  function isOwner() view private returns(bool) {... */
+      swap1
+      jump	// out
+        /* "contract.sol":26:679  contract Greeter {... */
+    tag_20:
+      dup3
+      dup1
+      sload
+      0x1
+      dup2
+      0x1
+      and
+      iszero
+      0x100
+      mul
+      sub
+      and
+      0x2
+      swap1
+      div
+      swap1
+      0x0
+      mstore
+      keccak256(0x0, 0x20)
+      swap1
+      0x1f
+      add
+      0x20
+      swap1
+      div
+      dup2
+      add
+      swap3
+      dup3
+      0x1f
+      lt
+      tag_30
+      jumpi
+      dup1
+      mload
+      not(0xff)
+      and
+      dup4
+      dup1
+      add
+      or
+      dup6
+      sstore
+      jump(tag_29)
+    tag_30:
+      dup3
+      dup1
+      add
+      0x1
+      add
+      dup6
+      sstore
+      dup3
+      iszero
+      tag_29
+      jumpi
+      swap2
+      dup3
+      add
+    tag_31:
+      dup3
+      dup2
+      gt
+      iszero
+      tag_32
+      jumpi
+      dup3
+      mload
+      dup3
+      sstore
+      swap2
+      0x20
+      add
+      swap2
+      swap1
+      0x1
+      add
+      swap1
+      jump(tag_31)
+    tag_32:
+    tag_29:
+      pop
+      swap1
+      pop
+      tag_33
+      swap2
+      swap1
+      jump	// in(tag_34)
+    tag_33:
+      pop
+      swap1
+      jump	// out
+    tag_34:
+      tag_35
+      swap2
+      swap1
+    tag_36:
+      dup1
+      dup3
+      gt
+      iszero
+      tag_37
+      jumpi
+      0x0
+      dup2
+      0x0
+      swap1
+      sstore
+      pop
+      0x1
+      add
+      jump(tag_36)
+    tag_37:
+      pop
+      swap1
+      jump
+    tag_35:
+      swap1
+      jump	// out
+
+    auxdata: 0xa165627a7a7230582000f95df29c235d7056041177e7c7b9f179265256adad8501dfac8aa75972e4300029
+}

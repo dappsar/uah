@@ -1,0 +1,168 @@
+PragmaDirective
+   Source: "pragma solidity ^0.4.22;"
+ContractDefinition "Greeter"
+   Source: "contract Greeter {\n    string greeting;\n    address owner;\n\n    modifier onlyOwner {\n        require(isOwner(), \"Only owner can do that!\");\n        _;\n    }\n    \n    constructor(string _greeting) public {\n        greeting = _greeting;\n        owner = msg.sender;\n    }\n\n    function sayHello() public view returns(string) {\n        if (isOwner()) {\n            return \"Hey daddy!\";\n        } else {\n            return greeting;\n        }\n    }\n\n    function setGreeting(string _newGreeting) public onlyOwner {\n        greeting = _newGreeting;\n    }\n    \n    function isOwner() view private returns(bool) {\n        return msg.sender == owner;    \n    }\n}"
+  VariableDeclaration "greeting"
+     Type: string storage ref
+     Source: "string greeting"
+    ElementaryTypeName string
+       Source: "string"
+  VariableDeclaration "owner"
+     Type: address
+     Source: "address owner"
+    ElementaryTypeName address
+       Source: "address"
+  ModifierDefinition "onlyOwner"
+     Source: "modifier onlyOwner {\n        require(isOwner(), \"Only owner can do that!\");\n        _;\n    }"
+    ParameterList
+       Source: ""
+    Block
+       Source: "{\n        require(isOwner(), \"Only owner can do that!\");\n        _;\n    }"
+      ExpressionStatement
+         Source: "require(isOwner(), \"Only owner can do that!\")"
+        FunctionCall
+           Type: tuple()
+           Source: "require(isOwner(), \"Only owner can do that!\")"
+          Identifier require
+             Type: function (bool,string memory) pure
+             Source: "require"
+          FunctionCall
+             Type: bool
+             Source: "isOwner()"
+            Identifier isOwner
+               Type: function () view returns (bool)
+               Source: "isOwner"
+          Literal, token: [no token] value: Only owner can do that!
+             Type: literal_string "Only owner can do that!"
+             Source: "\"Only owner can do that!\""
+      PlaceholderStatement
+         Source: "_"
+  FunctionDefinition "" - public
+     Source: "constructor(string _greeting) public {\n        greeting = _greeting;\n        owner = msg.sender;\n    }"
+    ParameterList
+       Source: "(string _greeting)"
+      VariableDeclaration "_greeting"
+         Type: string memory
+         Source: "string _greeting"
+        ElementaryTypeName string
+           Source: "string"
+    ParameterList
+       Source: ""
+    Block
+       Source: "{\n        greeting = _greeting;\n        owner = msg.sender;\n    }"
+      ExpressionStatement
+         Source: "greeting = _greeting"
+        Assignment using operator =
+           Type: string storage ref
+           Source: "greeting = _greeting"
+          Identifier greeting
+             Type: string storage ref
+             Source: "greeting"
+          Identifier _greeting
+             Type: string memory
+             Source: "_greeting"
+      ExpressionStatement
+         Source: "owner = msg.sender"
+        Assignment using operator =
+           Type: address
+           Source: "owner = msg.sender"
+          Identifier owner
+             Type: address
+             Source: "owner"
+          MemberAccess to member sender
+             Type: address
+             Source: "msg.sender"
+            Identifier msg
+               Type: msg
+               Source: "msg"
+  FunctionDefinition "sayHello" - public - const
+     Source: "function sayHello() public view returns(string) {\n        if (isOwner()) {\n            return \"Hey daddy!\";\n        } else {\n            return greeting;\n        }\n    }"
+    ParameterList
+       Source: "()"
+    ParameterList
+       Source: "(string)"
+      VariableDeclaration ""
+         Type: string memory
+         Source: "string"
+        ElementaryTypeName string
+           Source: "string"
+    Block
+       Source: "{\n        if (isOwner()) {\n            return \"Hey daddy!\";\n        } else {\n            return greeting;\n        }\n    }"
+      IfStatement
+         Source: "if (isOwner()) {\n            return \"Hey daddy!\";\n        } else {\n            return greeting;\n        }"
+        FunctionCall
+           Type: bool
+           Source: "isOwner()"
+          Identifier isOwner
+             Type: function () view returns (bool)
+             Source: "isOwner"
+        Block
+           Source: "{\n            return \"Hey daddy!\";\n        }"
+          Return
+             Source: "return \"Hey daddy!\""
+            Literal, token: [no token] value: Hey daddy!
+               Type: literal_string "Hey daddy!"
+               Source: "\"Hey daddy!\""
+        Block
+           Source: "{\n            return greeting;\n        }"
+          Return
+             Source: "return greeting"
+            Identifier greeting
+               Type: string storage ref
+               Source: "greeting"
+  FunctionDefinition "setGreeting" - public
+     Source: "function setGreeting(string _newGreeting) public onlyOwner {\n        greeting = _newGreeting;\n    }"
+    ParameterList
+       Source: "(string _newGreeting)"
+      VariableDeclaration "_newGreeting"
+         Type: string memory
+         Source: "string _newGreeting"
+        ElementaryTypeName string
+           Source: "string"
+    ParameterList
+       Source: ""
+    ModifierInvocation "onlyOwner"
+       Source: "onlyOwner"
+      Identifier onlyOwner
+         Type: modifier ()
+         Source: "onlyOwner"
+    Block
+       Source: "{\n        greeting = _newGreeting;\n    }"
+      ExpressionStatement
+         Source: "greeting = _newGreeting"
+        Assignment using operator =
+           Type: string storage ref
+           Source: "greeting = _newGreeting"
+          Identifier greeting
+             Type: string storage ref
+             Source: "greeting"
+          Identifier _newGreeting
+             Type: string memory
+             Source: "_newGreeting"
+  FunctionDefinition "isOwner" - const
+     Source: "function isOwner() view private returns(bool) {\n        return msg.sender == owner;    \n    }"
+    ParameterList
+       Source: "()"
+    ParameterList
+       Source: "(bool)"
+      VariableDeclaration ""
+         Type: bool
+         Source: "bool"
+        ElementaryTypeName bool
+           Source: "bool"
+    Block
+       Source: "{\n        return msg.sender == owner;    \n    }"
+      Return
+         Source: "return msg.sender == owner"
+        BinaryOperation using operator ==
+           Type: bool
+           Source: "msg.sender == owner"
+          MemberAccess to member sender
+             Type: address
+             Source: "msg.sender"
+            Identifier msg
+               Type: msg
+               Source: "msg"
+          Identifier owner
+             Type: address
+             Source: "owner"
