@@ -68,6 +68,9 @@ Nota: Es importante que el archivo [*GethSyncingProgress_2TimeEstimate.js*](Geth
 
 ## Obtener la dirección del bloque génesis
 
+Se puede obtener la dirección (hash) del bloque 0, con el comando indicado debajo, el cual muestra la información del nodo. El hash del bloque 0, esta en el tag "genesis".
+
+
 ``` 
 Opción 1: admin.nodeInfo
 ``` 
