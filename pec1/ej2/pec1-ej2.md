@@ -33,6 +33,7 @@ cd ~/.ethereum/rinkeby/
 geth attach ipc:geth.ipc
 ``` 
 
+
 ![Inicir la consola de get con la red rinkeby](images/load-blockchain-rinkeby.png?raw=true "Inicir la consola de get con la red rinkeby")
 
 
@@ -65,8 +66,23 @@ Nota: Es importante que el archivo [*GethSyncingProgress_2TimeEstimate.js*](Geth
 
 ![Revisar el estado de sincronización fuera de la consola](images/rinkeby-check-status-with-time-estimated.png?raw=true "Revisar el estado de sincronización fuera de la consola")
 
-
 ## Obtener la dirección del bloque génesis
+
+``` 
+Opción 1: admin.nodeInfo
+``` 
+
+![Dirección del bloqueo 0](images/rinkeby-genesis.png?raw=true "Dirección del bloqueo 0")
+
+
+
+``` 
+Opción 2: web3.eth.getBlock(0).hash
+Opción 3: eth.getBlock(0).hash
+``` 
+
+![Dirección del bloqueo 0](images/rinkeby-blockhash.png?raw=true "Dirección del bloqueo 0")
+
 
 
 ## Obtener sólo la cantidad de peers a los que está conectado
@@ -96,8 +112,10 @@ Opción 2: admin.peers.forEach(function(value){console.log(value.network.remoteA
 ![info peers](images/rinkeby-peers-info-2.png?raw=true "info peers")
 
 
-### Altura máxima de bloque de los peers
+### Altura máxima de bloque
 
 ``` 
+web3.eth.syncing
 ``` 
 
+![Altura bloques](images/rinkeby-syncing.png?raw=true "Altura bloques") 
