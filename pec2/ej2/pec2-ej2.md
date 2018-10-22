@@ -48,3 +48,76 @@ Dejando el nodo de IPFS en ejecución, se abrió otra terminal, para comenzar a 
 ```
 ipfs swarm peers
 ```
+
+![ipfs swarm peers](images/ipfs-swarm-peers.png?raw=true "ipfs swarm peers")
+
+
+## Compartir nuestro proyecto (pet-shop)
+
+
+### Cambios previos al proyecto pet-shop 
+
+Antes que subir el proyecto a ipfs, se realizan algunos cambios para poder distribuirlo:
+
+* Se instaló webpack con el comando **npm i -g webpack**
+
+* Se creó el archivo **webpack.config.js**, el cual contiene las instrucciones para armar los archivos de distribución del proyecto. Contenido del archivo:
+
+```
+const path = require('path')
+
+module.exports = {
+	entry: path.join(__dirname, 'src/js', 'app.js'), 
+	output: {
+	filename: 'build.js',
+	path: path.join(__dirname, 'dist')
+},
+module: {
+   rules: [{
+	  test: /\.css$/, // To load the css in react
+	  use: ['style-loader', 'css-loader'],
+	  include: [
+		 /src/,
+		 /contracts/,
+		 /migrations/,
+		 /build/
+	  ]
+   }]
+}
+}
+```
+
+### Compartir el proyecto en ipfs 
+
+Luego de los cambios en el proyecto para su distribución, se comenzo a compartir, con el siguiente comando de ipfs:
+
+```
+ipfs add -r dist/
+```
+
+![ipfs add](images/ipfs-add.png?raw=true "ipfs add")
+
+
+El hash obtenido de ipfs, es el siguiente:
+**QmWQhDSRQGdfEWbUXVJUU1VcRoQkYovyTNiSC9DMyburir**
+
+Con eso, nuestro contenido quedo incorporado en la red de ipfs. 
+
+### Publicar el proyecto en ipfs
+
+Para publicar el proyecto en ipfs, hay que ingresar el siguiente comando:
+
+```
+# Se utiliza el hash obtenido el paso anterior
+ipfs name publish QmWQhDSRQGdfEWbUXVJUU1VcRoQkYovyTNiSC9DMyburir
+```
+
+Luego de ejecutado el comando, se obtiene lo siguiente:
+
+![ipfs publish](images/ipfs-publish.png?raw=true "ipfs publish")
+
+Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visualizado, ingresando la siguiente url:
+
+**gateway.ipfs.io/ipns/QmY4m7fW7cwZoGajKupuExYF93K1iyrfrS3w1raocSM45j**
+
+

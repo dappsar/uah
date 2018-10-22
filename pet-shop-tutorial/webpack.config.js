@@ -12,9 +12,7 @@ module: {
 	  use: ['style-loader', 'css-loader'],
 	  include: [
 		 /src/,
-		 /contracts/,
-		 /migrations/,
-		 /build/
+		 /build/contracts/
 	  ]
    }]
 }
