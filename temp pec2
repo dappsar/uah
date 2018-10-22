@@ -4,3 +4,11 @@ https://michalzalecki.com/register-test-domain-with-ens/
 http://docs.ens.domains/en/latest/userguide.html
 
 https://www.google.com.ar/url?sa=t&source=web&rct=j&url=https://medium.com/%40merunasgrincalaitis/the-ultimate-end-to-end-tutorial-to-create-and-deploy-a-fully-descentralized-dapp-in-ethereum-18f0cf6d7e0e&ved=2ahUKEwjXgN-MrJjeAhUHuVkKHbWlAeoQjjgwCnoECAAQAQ&usg=AOvVaw0z3MCPrXJWPw1pGwhyHX9B
+
+http://rinkeby-faucet.com/
+
+instalar truffle:
+sudo npm install -g truffle
+
+istalar contrato en rinkeby
+https://medium.com/practical-blockchain/deploying-smart-contract-to-rinkeby-testnet-using-truffle-and-mac-os-x-8fc16ff380e2
