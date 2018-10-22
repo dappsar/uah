@@ -11,8 +11,8 @@ module: {
 	  test: /\.css$/, // To load the css in react
 	  use: ['style-loader', 'css-loader'],
 	  include: [
-		 /src/,
-		 /build/contracts/
+		path.resolve(__dirname, "src/"),
+		path.resolve(__dirname, "build/contracts/")
 	  ]
    }]
 }
