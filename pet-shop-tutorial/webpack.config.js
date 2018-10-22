@@ -6,7 +6,7 @@ module.exports = {
 	entry: {main: path.join(__dirname, 'src/js', 'app.js')},
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: 'main.js'
+		filename: 'app.js'
 	},
 	/*
 	We added a module key to our webpack config object assigning it an object with rules property, 
