@@ -54,7 +54,6 @@ ipfs swarm peers
 
 ## Compartir nuestro proyecto (pet-shop)
 
-
 ### Cambios previos al proyecto pet-shop 
 
 Antes que subir el proyecto a ipfs, se realizan algunos cambios para poder distribuirlo:
@@ -65,26 +64,37 @@ Antes que subir el proyecto a ipfs, se realizan algunos cambios para poder distr
 
 ```
 const path = require('path')
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: path.join(__dirname, 'src/js', 'app.js'), 
+	entry: {main: path.join(__dirname, 'src/js', 'app.js')},
 	output: {
-	filename: 'build.js',
-	path: path.join(__dirname, 'dist')
-},
-module: {
-   rules: [{
-	  test: /\.css$/, // To load the css in react
-	  use: ['style-loader', 'css-loader'],
-	  include: [
-		 /src/,
-		 /contracts/,
-		 /migrations/,
-		 /build/
-	  ]
-   }]
+		path: path.join(__dirname, 'dist'),
+		filename: 'app.js'
+	},
+	/*
+	We added a module key to our webpack config object assigning it an object with rules property, 
+	which is an array of some rules for configuring the loaders we want to use with webpack
+	*/
+	module: {
+		rules: [{
+			test: /\.js$/,
+			exclude: /node_modules/,
+			use: {
+				loader: "babel-loader"
+			}
+		},
+		{
+			test: /\.css$/,
+			use: ['style-loader', 'css-loader'],
+			include: [
+				path.resolve(__dirname, "src/")
+			]
+		}]
+	}
 }
-}
+
 ```
 
 ### Compartir el proyecto en ipfs 
@@ -99,7 +109,7 @@ ipfs add -r dist/
 
 
 El hash obtenido de ipfs, es el siguiente:
-**QmQAMLkq4JJK7TxJHfx3MCoQ7aWfvKmqAVkP3D49gydBu2**
+**QmdY7NPX1PAiy1e2c3aRLNTjnUgRUbifUJdoStcC3V1aih**
 
 Con eso, nuestro contenido quedo incorporado en la red de ipfs. 
 
