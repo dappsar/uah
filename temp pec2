@@ -7,8 +7,16 @@ https://www.google.com.ar/url?sa=t&source=web&rct=j&url=https://medium.com/%40me
 
 http://rinkeby-faucet.com/
 
-instalar truffle:
-sudo npm install -g truffle
 
-istalar contrato en rinkeby
+Obtener ethers en rinkeby para cuenta:
+0x94a9c4f8eb4e40e394d9800b69c42a18fee2af7b
+
+Instalar contrato en rinkeby
 https://medium.com/practical-blockchain/deploying-smart-contract-to-rinkeby-testnet-using-truffle-and-mac-os-x-8fc16ff380e2
+
+Otra opción para desplegar truffle:
+https://medium.com/coinmonks/the-many-ways-to-deploy-your-smart-contract-to-rinkeby-network-38cadf7b20be
+
+personal.unlockAccount(eth.accounts[0],"123456",999999)
+
+ojo la falta de espacio!!
