@@ -84,6 +84,11 @@ La carga de ethers, se relaizó a través de la URL de faucet para rinkeby: [htt
 
 ![faucets rinkeby](images/address-ethers.png?raw=true "faucets rinkeby")
 
+Se pueden ver las transacciones con los ethers cargados en [etherscan](https://rinkeby.etherscan.io/address/0x94a9c4f8eb4e40e394d9800b69c42a18fee2af7b).
+
+![evidencia ethers](images/account-faucet-ethers.png?raw=true "evidencia ethers")
+
+
 Para desplegar el contrato, se manejaron 3 consolas:
 
 * Consola 1: el nodo de la red rinkeby en ejecución
