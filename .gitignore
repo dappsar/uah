@@ -62,3 +62,6 @@ typings/
 
 # editors
 .vscode
+
+# output folders
+.build
