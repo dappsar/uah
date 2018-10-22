@@ -1,1 +1,109 @@
-!function(t){var e={};function n(o){if(e[o])return e[o].exports;var r=e[o]={i:o,l:!1,exports:{}};return t[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=t,n.c=e,n.d=function(t,e,o){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)n.d(o,r,function(e){return t[e]}.bind(null,r));return o},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=0)}([function(t,e,n){"use strict";App={web3Provider:null,contracts:{},init:function(){return $.getJSON("../pets.json",function(t){var e=$("#petsRow"),n=$("#petTemplate");for(i=0;i<t.length;i++)n.find(".panel-title").text(t[i].name),n.find("img").attr("src",t[i].picture),n.find(".pet-breed").text(t[i].breed),n.find(".pet-age").text(t[i].age),n.find(".pet-location").text(t[i].location),n.find(".btn-adopt").attr("data-id",t[i].id),e.append(n.html())}),App.initWeb3()},initWeb3:function(){return"undefined"!=typeof web3?App.web3Provider=web3.currentProvider:App.web3Provider=new Web3.providers.HttpProvider("http://localhost:7545"),web3=new Web3(App.web3Provider),App.initContract()},initContract:function(){return $.getJSON("Adoption.json",function(t){var e=t;return App.contracts.Adoption=TruffleContract(e),App.contracts.Adoption.setProvider(App.web3Provider),App.markAdopted()}),App.bindEvents()},bindEvents:function(){$(document).on("click",".btn-adopt",App.handleAdopt)},markAdopted:function(t,e){App.contracts.Adoption.deployed().then(function(t){return t.getAdopters.call()}).then(function(t){for(i=0;i<t.length;i++)"0x0000000000000000000000000000000000000000"!==t[i]&&$(".panel-pet").eq(i).find("button").text("Success").attr("disabled",!0)}).catch(function(t){console.log(t.message)})},handleAdopt:function(t){t.preventDefault();var e=parseInt($(t.target).data("id"));web3.eth.getAccounts(function(t,n){t&&console.log(t);var o=n[0];App.contracts.Adoption.deployed().then(function(t){return t.adopt(e,{from:o})}).then(function(t){return App.markAdopted()}).catch(function(t){console.log(t.message)})})}},$(function(){$(window).load(function(){App.init()})})}]);
+App = {
+  web3Provider: null,
+  contracts: {},
+
+  init: function() {
+    // Load pets.
+    $.getJSON('./pets.json', function(data) {
+      var petsRow = $('#petsRow');
+      var petTemplate = $('#petTemplate');
+
+      for (i = 0; i < data.length; i ++) {
+        petTemplate.find('.panel-title').text(data[i].name);
+        petTemplate.find('img').attr('src', data[i].picture);
+        petTemplate.find('.pet-breed').text(data[i].breed);
+        petTemplate.find('.pet-age').text(data[i].age);
+        petTemplate.find('.pet-location').text(data[i].location);
+        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+
+        petsRow.append(petTemplate.html());
+      }
+    });
+
+    return App.initWeb3();
+  },
+
+  initWeb3: function() {
+	// Is there an injected web3 instance?
+	if (typeof web3 !== 'undefined') {
+		App.web3Provider = web3.currentProvider;
+	} else {
+		// If no injected web3 instance is detected, fall back to Ganache
+		App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+	}
+	web3 = new Web3(App.web3Provider);
+	return App.initContract();
+  },
+
+  initContract: function() {
+	$.getJSON('Adoption.json', function(data) {
+		// Get the necessary contract artifact file and instantiate it with truffle-contract
+		var AdoptionArtifact = data;
+		App.contracts.Adoption = TruffleContract(AdoptionArtifact);
+	  
+		// Set the provider for our contract
+		App.contracts.Adoption.setProvider(App.web3Provider);
+	  
+		// Use our contract to retrieve and mark the adopted pets
+		return App.markAdopted();
+	});
+
+    return App.bindEvents();
+  },
+
+  bindEvents: function() {
+    $(document).on('click', '.btn-adopt', App.handleAdopt);
+  },
+
+  markAdopted: function(adopters, account) {
+	var adoptionInstance;
+
+	App.contracts.Adoption.deployed().then(function(instance) {
+	  adoptionInstance = instance;
+	
+	  return adoptionInstance.getAdopters.call();
+	}).then(function(adopters) {
+	  for (i = 0; i < adopters.length; i++) {
+		if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
+		  $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
+		}
+	  }
+	}).catch(function(err) {
+	  console.log(err.message);
+	});
+  },
+
+  handleAdopt: function(event) {
+    event.preventDefault();
+
+    var petId = parseInt($(event.target).data('id'));
+
+	var adoptionInstance;
+
+	web3.eth.getAccounts(function(error, accounts) {
+	  if (error) {
+		console.log(error);
+	  }
+	
+	  var account = accounts[0];
+	
+	  App.contracts.Adoption.deployed().then(function(instance) {
+		adoptionInstance = instance;
+	
+		// Execute adopt as a transaction by sending account
+		return adoptionInstance.adopt(petId, {from: account});
+	  }).then(function(result) {
+		return App.markAdopted();
+	  }).catch(function(err) {
+		console.log(err.message);
+	  });
+	});
+  }
+
+};
+
+$(function() {
+  $(window).load(function() {
+    App.init();
+  });
+});

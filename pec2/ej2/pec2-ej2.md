@@ -99,7 +99,7 @@ ipfs add -r dist/
 
 
 El hash obtenido de ipfs, es el siguiente:
-**QmZUbnasHHsmNgRzD57YjQJTt8CsxNT8EyLW8YTWbAgGeH**
+**QmQAMLkq4JJK7TxJHfx3MCoQ7aWfvKmqAVkP3D49gydBu2**
 
 Con eso, nuestro contenido quedo incorporado en la red de ipfs. 
 
@@ -109,7 +109,7 @@ Para publicar el proyecto en ipfs, hay que ingresar el siguiente comando:
 
 ```
 # Se utiliza el hash obtenido el paso anterior
-ipfs name publish QmZUbnasHHsmNgRzD57YjQJTt8CsxNT8EyLW8YTWbAgGeH
+ipfs name publish QmQAMLkq4JJK7TxJHfx3MCoQ7aWfvKmqAVkP3D49gydBu2
 ```
 
 Luego de ejecutado el comando, se obtiene lo siguiente:
