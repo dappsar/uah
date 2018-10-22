@@ -7,12 +7,12 @@ module.exports = {
         port: 8545,
         network_id: "4",
         from: "0x94a9c4f8eb4e40e394d9800b69c42a18fee2af7b",
-        gas: 6712390
+        gas: 4700000
     },
     development: {
       host: "localhost",
       port: 7545,
       network_id: "*" // Match any network id
     }
-}
+  }
 };
