@@ -94,7 +94,7 @@ Para desplegar el contrato, se manejaron 3 consolas:
 * Consola 1: el nodo de la red rinkeby en ejecución
 
 ```
-geth --networkid=4 --datadir=. --bootnodes=enode://a24ac7c5484ef4ed0c5eb2d36620ba4e4aa13b8c84684e1b4aab0cebea2ae45cb4d375b77eab56516d34bfbd3c1a833fc51296ff084b770b94fb9028c4d25ccf@52.169.42.101:30303?discport=30304 --cache=1024 --rpc
+geth --networkid=4 --datadir=. --bootnodes=enode://a24ac7c5484ef4ed0c5eb2d36620ba4e4aa13b8c84684e1b4aab0cebea2ae45cb4d375b77eab56516d34bfbd3c1a833fc51296ff084b770b94fb9028c4d25ccf@52.169.42.101:30303?discport=30304 --cache=1024 --rpc --rpcapi "eth,net,web3" --rpccorsdomain '*' --rpcaddr 0.0.0.0
 ```
 
 ![consola 1](images/consola1.png?raw=true "consola 1")
@@ -102,7 +102,7 @@ geth --networkid=4 --datadir=. --bootnodes=enode://a24ac7c5484ef4ed0c5eb2d36620b
 * Consola 2: Un attach a la consola de geth para desbloquear la cuenta
 
 ```
-geth attach ipc:geth.ipc
+geth -datadir=$HOME/ethereum/rinkeby attach ipc:$HOME/ethereum/rinkeby/geth.ipc console
 ```
 
 ![consola 2](images/consola2.png?raw=true "consola 2") 
@@ -195,5 +195,3 @@ Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visuali
 **gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb**
 
 ![ipfs host result](images/ipfs-host-result.png?raw=true "ipfs host result")
-
-

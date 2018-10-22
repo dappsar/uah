@@ -24,3 +24,8 @@ http://blog.jaumesola.com/setting-up-an-ethereum-node-on-the-rinkeby-testnet
 
 * ver que se vean los ethers en la cuenta
 * desplegar contrato en rinkeby
+
+* Sync ropsten: https://erickhun.com/post/setup-your-ethereum-node--geth-ropsten-test-network/
+
+otra forma de obtener el test domain???
+https://medium.com/the-ethereum-name-service/renewing-or-releasing-your-ens-name-e8208445f8e1

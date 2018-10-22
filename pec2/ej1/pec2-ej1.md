@@ -14,3 +14,7 @@ Se descarga el archivo de https://raw.githubusercontent.com/ensdomains/ens/maste
 
 Once you did it, connect to running Ethereum node using geth and load the ensutils script.
 
+IMPORTANTE: 
+
+	web3.eth.defaultAccount = web3.eth.accounts[0]
+	personal.unlockAccount(web3.eth.defaultAccount)
