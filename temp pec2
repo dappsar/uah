@@ -22,8 +22,6 @@ Si no anda lo de saldo, probar de instalar la red rinkeby desde aca:
 
 ----------------------
 
-* ver que se vean los ethers en la cuenta
-* desplegar contrato en rinkeby
 
 * Sync ropsten: https://erickhun.com/post/setup-your-ethereum-node--geth-ropsten-test-network/
 
@@ -36,3 +34,16 @@ desbloqueo cuenta
 
 https://michalzalecki.com/register-test-domain-with-ens/
 swarm: https://medium.com/@codeAMT/how-to-launch-swarm-for-dapp-testing-8003e55380e2
+
+------------------
+
+ej1:
+	* Terminar de sincronizar red
+	* Ver que se vean los ethers en la cuenta
+
+ej2:
+	* falta subir contratos
+	* falta imagen de consola 3
+	* falta prueba de "adopt" con ipfs (depende de contratos)
+
+ej3: 

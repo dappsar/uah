@@ -113,7 +113,7 @@ Con eso se pudo corregir el error.
 
 ## Instalación de IPFS
 
-Se ejecutaron los siguientes pasos (disponibles en éste [link](https://docs.ipfs.io/introduction/install/)), para realizar la instalación de IPFS:
+Se ejecutaron los siguientes pasos (disponibles en el [link](https://docs.ipfs.io/introduction/install/) oficial de ipfs), para realizar la instalación:
 
 * Se descargó ipfs-go para linux, del link: [https://dist.ipfs.io/go-ipfs/v0.4.17/go-ipfs_v0.4.17_linux-amd64.tar.gz](https://dist.ipfs.io/go-ipfs/v0.4.17/go-ipfs_v0.4.17_linux-amd64.tar.gz)
 
@@ -134,7 +134,6 @@ Se inicializó IPFS, con el siguiente comando:
 ```
 ipfs init
 ```
-
 
 Luego, se dió inicio al servicio (daemon) de IPFS (el cual crea un nodo de ipfs) ingresando el siguiente comando:
 
@@ -166,7 +165,7 @@ ipfs add -r dist/
 
 ![ipfs add](images/ipfs-add.png?raw=true "ipfs add")
 
-El hash obtenido de ipfs, es el siguiente:
+El hash obtenido (el último) de ipfs, es el siguiente:
 **QmdY7NPX1PAiy1e2c3aRLNTjnUgRUbifUJdoStcC3V1aih**
 
 Con eso, nuestro contenido quedo incorporado en la red de ipfs. 
