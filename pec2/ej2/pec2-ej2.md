@@ -1,4 +1,8 @@
-# PEC 2 - Ejercicio 2
+# PEC 2 - Ejercicio 2 - IPFS
+
+A partir de un truffle project como puede ser la pet-shop utilizada en módulos anteriores, haga una pequeña modificación en su frontend para mostrar su nombre al ejecutar la aplicación. (Puede editar cualquier parámetro adicional, siempre y cuando el nombre sea visible). Suba el truffle project a GitHub (no incluya la carpeta node_modules). Arranque un daemon de IPFS y aloje la DApp (Proyecto truffle pet-shop). Debe ser capaz de utilizar la aplicación al igual que en localhost (por ejemplo: con MetaMask). 
+
+
 
 ## Modificación de un proyecto de Truffle
 
@@ -7,6 +11,7 @@ Se utilizó el proyecto [Pet-Shop](https://github.com/dappsar/uah/tree/master/pe
 ### Incorporación de mi nombre en la página del proyecto
 
 Se modificó el archivo [index.html](https://github.com/dappsar/uah/blob/master/pet-shop-tutorial/src/index.html), para agregar mi nombre, según lo pedido en la PEC.
+
 
 ![Pet Shop](images/pet-shop-nombre.png?raw=true "Pet Shop")
 
@@ -52,6 +57,9 @@ module.exports = {
 }
 ```
 
+* Dentro de la carpeta **dist/**, se cambio el archivo app.js, en donde hace uso del archivo pets.json, dado que tiene la ruta relativa a una carpeta.  Se cambió: 
+"*$.getJSON(**'../pets.json'**, function(data)*" por "*$.getJSON(**'./pets.json'**, function(data)*"
+
 ### Cambios en la configuración de truffle
 
 En el archivo [truffle.js](../../pet-shop-tutorial/truffle.js), se agregó la red **rinkeby**, para luego desplegar el contrato ahí y estar disponible una vez que el sitio se encuentre en ipfs.
@@ -76,11 +84,12 @@ module.exports = {
   }
 };
 ```
+
 ### Despliegue del contrato
 
 Para poder utilizar la aplicación completa desde ipfs, es requerido tener el contrato desplegado en la red **rinkeby**. Para ello, hubo que cargar ethers a la cuenta y luego desbloquearla, para poder desplegar el contrato con truffle. 
 
-La carga de ethers, se relaizó a través de la URL de faucet para rinkeby: [https://faucet.rinkeby.io/](https://faucet.rinkeby.io/).
+La carga de ethers, se realizó a través de la URL de faucet para rinkeby: [https://faucet.rinkeby.io/](https://faucet.rinkeby.io/).
 
 ![faucets rinkeby](images/address-ethers.png?raw=true "faucets rinkeby")
 
@@ -102,7 +111,7 @@ geth --networkid=4 --datadir=. --bootnodes=enode://a24ac7c5484ef4ed0c5eb2d36620b
 * Consola 2: Un attach a la consola de geth para desbloquear la cuenta
 
 ```
-geth -datadir=$HOME/ethereum/rinkeby attach ipc:$HOME/ethereum/rinkeby/geth.ipc console
+geth -datadir=$HOME/.ethereum/rinkeby attach ipc:$HOME/.ethereum/rinkeby/geth.ipc console
 ```
 
 ![consola 2](images/consola2.png?raw=true "consola 2") 

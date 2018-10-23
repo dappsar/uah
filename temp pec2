@@ -18,7 +18,7 @@ https://medium.com/coinmonks/the-many-ways-to-deploy-your-smart-contract-to-rink
 personal.unlockAccount(eth.accounts[0],"123456",999999)
 
 Si no anda lo de saldo, probar de instalar la red rinkeby desde aca:
-http://blog.jaumesola.com/setting-up-an-ethereum-node-on-the-rinkeby-testnet
+	http://blog.jaumesola.com/setting-up-an-ethereum-node-on-the-rinkeby-testnet
 
 ----------------------
 
@@ -29,3 +29,10 @@ http://blog.jaumesola.com/setting-up-an-ethereum-node-on-the-rinkeby-testnet
 
 otra forma de obtener el test domain???
 https://medium.com/the-ethereum-name-service/renewing-or-releasing-your-ens-name-e8208445f8e1
+
+'''''''''''''''''''''''''
+
+desbloqueo cuenta
+
+https://michalzalecki.com/register-test-domain-with-ens/
+swarm: https://medium.com/@codeAMT/how-to-launch-swarm-for-dapp-testing-8003e55380e2
