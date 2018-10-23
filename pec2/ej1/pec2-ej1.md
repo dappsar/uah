@@ -47,6 +47,18 @@ Para registrar el dominio, se ingresa:
 testRegistrar.register(web3.sha3('dbaranowski'), eth.accounts[0], {from: eth.accounts[0]})
 ``` 
 
+## Validación de propiedad del dominio
+
+Para validar la propiedad del dominio, se ingresa:
+
+``` 
+eth.accounts[0]
+ens.owner(namehash("dbaranowski.test")))
+``` 
+
+## Configuración de Resolver
+
+Para que el dominio, resuelva una dirección, es requerido obtener un Resolver,
 
 
 

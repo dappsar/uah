@@ -8,12 +8,22 @@ MetaMask). Adjunte el hash (manifest) de Swarm asociado con la aplicación.
 
 ## Instalación de SWARM
 
-
+Se realiza la instalación de swarm, ejecutando los siguientes comandos:
 
 ``` 
-``` 
-
 sudo apt-get install software-properties-common
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt-get install ethereum-swarm
+``` 
+
+## Asociación con la cuenta local
+
+Ahora, se asocia la cuenta local con swarm.
+
+``` 
+swarm --datadir=$HOME/.ethereum/rinkeby --bzzaccount 0x7b51bfdd0fc002981eaf6529726adba44482d0f9
+``` 
+
+![swarm sync](images/swarm-sync.png?raw=true "swarm sync")
+
