@@ -17,52 +17,30 @@ Se modificó el archivo [index.html](https://github.com/dappsar/uah/blob/master/
 
 ### Cambios en el 'empaquetado' del proyecto
 
-Se incorporó **webpack** al archivo package.json, para realizar la distribución de los archivos del proyecto. Los mismos quedan en la carpeta **dist/**. Para ello, se realizó lo siguiente:
+Para subir los archivos a IPFS y SWARM, se empaquetaron en una sola carpeta.  Primero, se instaló webpack, para generar la carpeta **dist/** y copiar los archivos de forma automática, pero detectando algunos problemas y viendo que el javascript, tiene una ruta relativa a un archivo json (pets.json) que necesita el proyecto para funcionar, se terminó por hacer la copia a mano.
 
-* Se instaló webpack con el comando **npm i --save webpack**
+Dentro de la carpeta **dist/**, se cambio el archivo *app.js*, en donde se hace uso del archivo *pets.json*, dado que tiene la ruta relativa a una carpeta.  
 
-* Se creó el archivo **webpack.config.js**, el cual contiene las instrucciones para armar los archivos de distribución del proyecto. Contenido del archivo:
+Se cambió:
+"*getJSON(**'../pets.json'**, function(data)*" 
 
-```
-const path = require('path')
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+por:
+"*getJSON(**'./pets.json'**, function(data)*"
 
-module.exports = {
-	entry: {main: path.join(__dirname, 'src/js', 'app.js')},
-	output: {
-		path: path.join(__dirname, 'dist'),
-		filename: 'app.js'
-	},
-	/*
-	We added a module key to our webpack config object assigning it an object with rules property, 
-	which is an array of some rules for configuring the loaders we want to use with webpack
-	*/
-	module: {
-		rules: [{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			use: {
-				loader: "babel-loader"
-			}
-		},
-		{
-			test: /\.css$/,
-			use: ['style-loader', 'css-loader'],
-			include: [
-				path.resolve(__dirname, "src/")
-			]
-		}]
-	}
-}
-```
+En dicha carpeta, quedaron los siguientes archivos:
 
-* Dentro de la carpeta **dist/**, se cambio el archivo app.js, en donde hace uso del archivo pets.json, dado que tiene la ruta relativa a una carpeta.  Se cambió: 
-"*$.getJSON(**'../pets.json'**, function(data)*" por "*$.getJSON(**'./pets.json'**, function(data)*"
+* carpeta *images* y todos sus archivos
+* *Adoption.json*
+* *app.js*
+* *index.html*
+* *pets.json*
+
+Las referencias a otros archivos Js y css, tal como boostrap, web3 y truffle-contract, se cambiaron en el index.html, para incorporarlos vía un CDN (Content Delivery Network).
 
 ### Cambios en la configuración de truffle
 
 En el archivo [truffle.js](../../pet-shop-tutorial/truffle.js), se agregó la red **rinkeby**, para luego desplegar el contrato ahí y estar disponible una vez que el sitio se encuentre en ipfs.
+
 
 ```
 module.exports = {
@@ -73,7 +51,6 @@ module.exports = {
         host: "127.0.0.1",
         port: 8545,
         network_id: "4",
-        from: "0x94a9c4f8eb4e40e394d9800b69c42a18fee2af7b",
         gas: 6712390
     },
     development: {
@@ -93,7 +70,7 @@ La carga de ethers, se realizó a través de la URL de faucet para rinkeby: [htt
 
 ![faucets rinkeby](images/address-ethers.png?raw=true "faucets rinkeby")
 
-Se pueden ver las transacciones con los ethers cargados en [etherscan](https://rinkeby.etherscan.io/address/0x94a9c4f8eb4e40e394d9800b69c42a18fee2af7b).
+Se pueden ver las transacciones con los ethers cargados en [etherscan](https://rinkeby.etherscan.io/address/0x7b51bfdd0fc002981eaf6529726adba44482d0f9).
 
 ![evidencia ethers](images/account-faucet-ethers.png?raw=true "evidencia ethers")
 
@@ -124,6 +101,14 @@ truffle migrate -f 2 --network rinkeby
 ```
 
 ![consola 3](images/consola3.png?raw=true "consola 3")
+
+En la instalación de contratos en la red, se detectó un error (*Exceeds block gas limit*) por el valor del *gas* configurado en el archivo *truffle.js*. Para corregirlo, se ingresó en la consola de geth el siguiente comando:
+
+```
+eth.getBlock("latest").gasLimit
+```
+El valor obtenido, es el que se ingresó en el archivo *truffle.js*.
+Con eso se pudo corregir el error.
 
 
 ## Instalación de IPFS
