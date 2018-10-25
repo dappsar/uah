@@ -186,8 +186,8 @@ loadScript("./ensutils-testnet.js")
 ```
 # Es necesario enviar el nombre con la conversión a sha3
 # Si retorna 0 (o una fecha anterior a la actual para la segunda opción), es que el dominio está disponible.
-Opción 1: testRegistrar.expiryTimes(web3.sha3("dbaranowski.2"))
-Opción 2: new Date(testRegistrar.expiryTimes(web3.sha3('dbaranowski.2')).toNumber() * 1000)
+Opción 1: testRegistrar.expiryTimes(web3.sha3("dbaranowski2"))
+Opción 2: new Date(testRegistrar.expiryTimes(web3.sha3('dbaranowski2')).toNumber() * 1000)
 ```
 
 * Desbloquear la cuenta y configurarla en la variable defaultAccount de web3.
@@ -339,10 +339,12 @@ geth --networkid=4 --datadir=. --bootnodes=enode://a24ac7c5484ef4ed0c5eb2d36620b
 geth --datadir=$HOME/.ethereum/rinkeby attach ipc:$HOME/.ethereum/rinkeby/geth.ipc console
 ```
 
+
+![Rinkeby Sync](images/rinkeby-sync.png?raw=true "Rinkeby Sync")
+
 ### Registración del dominio
 
 La registración del dominio en **Rinkeby**, es igual que para la registración local, solo que cambia el script utilizado ensutils.js. En lugar de [ensutils-testnet.js](ensutils-testnet.js), se utilizó [ensutils-rinkeby.js](ensutils-rinkeby.js). Ahí cambia la dirección del contrato que tiene el ENS y el Public Resolver.
-
 
 
 -------
