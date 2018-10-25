@@ -1,11 +1,36 @@
-dudas
-NO esta resolviendo el res
- 
-pasar al readme:
-* desbloquear cuenta 
-* desde ens: truffle migrate --network dev.fifs
-eso despliega todos los contratos !! 
+do:
+  desplegar ipfs en nube again
+  terminar de instalar ipfs en windows para probar todo ahì.
+  quedaste en:
+    https://gist.github.com/drwasho/ca224cbd4a21440f7cc1245e594398e4
+    ejecutando: go get -u github.com/whyrusleeping/gx-go
+    
 
+ej1:
+	* Terminar de sincronizar red
+	* Ver que se vean los ethers en la 
+  * test owner rinkeby y local
+
+ej2:
+	* falta subir contratos
+	* falta imagen de consola 3
+	* falta prueba de "adopt" con ipfs (depende de contratos)
+
+ej3:
+	* no se ve swarm en web google
+----------------
+
+ipfs windows
+
+  Instrucciones: 
+  https://gist.github.com/drwasho/ca224cbd4a21440f7cc1245e594398e4
+
+  Descargar go: 
+  https://golang.org/dl/
+
+
+
+-------------------------------------
 
 continuar con:
 https://dickolsson.com/building-dapps-on-ethereum-part-5-ethereum-name-service-swarm/
@@ -62,17 +87,7 @@ swarm: https://medium.com/@codeAMT/how-to-launch-swarm-for-dapp-testing-8003e553
 
 ------------------
 
-ej1:
-	* Terminar de sincronizar red
-	* Ver que se vean los ethers en la cuenta
 
-ej2:
-	* falta subir contratos
-	* falta imagen de consola 3
-	* falta prueba de "adopt" con ipfs (depende de contratos)
-
-ej3:
-	* no se ve swarm en web google
 
 
 	windows:

@@ -342,6 +342,9 @@ geth --datadir=$HOME/.ethereum/rinkeby attach ipc:$HOME/.ethereum/rinkeby/geth.i
 
 ![Rinkeby Sync](images/rinkeby-sync.png?raw=true "Rinkeby Sync")
 
+![Rinkeby Syncing](images/rinkeby-syncing.png?raw=true "Rinkeby Syncing") 
+
+
 ### Registración del dominio
 
 La registración del dominio en **Rinkeby**, es igual que para la registración local, solo que cambia el script utilizado ensutils.js. En lugar de [ensutils-testnet.js](ensutils-testnet.js), se utilizó [ensutils-rinkeby.js](ensutils-rinkeby.js). Ahí cambia la dirección del contrato que tiene el ENS y el Public Resolver.

@@ -2,7 +2,7 @@
 
 A partir de un truffle project como puede ser la pet-shop utilizada en módulos anteriores, haga una pequeña modificación en su frontend para mostrar su nombre al ejecutar la aplicación. (Puede editar cualquier parámetro adicional, siempre y cuando el nombre sea visible). Suba el truffle project a GitHub (no incluya la carpeta node_modules). Arranque un daemon de IPFS y aloje la DApp (Proyecto truffle pet-shop). Debe ser capaz de utilizar la aplicación al igual que en localhost (por ejemplo: con MetaMask). 
 
-
+Nota: Como en el ejercicio 1, se realizó el ejercicio sobre red Local (a la falta de un nodo completo en las redes de test) y sobre la red Rinkeby.
 
 ## Modificación de un proyecto de Truffle
 
@@ -62,9 +62,54 @@ module.exports = {
 };
 ```
 
-### Despliegue del contrato
+----
 
-Para poder utilizar la aplicación completa desde ipfs, es requerido tener el contrato desplegado en la red **rinkeby**. Para ello, hubo que cargar ethers a la cuenta y luego desbloquearla, para poder desplegar el contrato con truffle. 
+## Despliegue del contrato
+
+Para poder utilizar la aplicación completa desde ipfs, es requerido tener el contrato desplegado en la red. Para ello, hubo que cargar ethers a la cuenta, desbloquearla y activar la minería (para que se hagan efectivas las transacciones con el despliegue). Luego, desplegar el contrato con truffle.
+
+Se indica los pasos realizados para el despliegue en la red local y en rinkeby, indicando la diferencia según la red en casos particulares. En los que no está indicado, es que el comando es igual para ambas.
+
+### Ejecución del nodo de la red
+
+**Rinkeby**
+```
+geth --networkid=4 --datadir=. --bootnodes=enode://a24ac7c5484ef4ed0c5eb2d36620ba4e4aa13b8c84684e1b4aab0cebea2ae45cb4d375b77eab56516d34bfbd3c1a833fc51296ff084b770b94fb9028c4d25ccf@52.169.42.101:30303?discport=30304 --cache=1024 --rpc --rpcapi "eth,net,web3" --rpccorsdomain '*' --rpcaddr 0.0.0.0
+```
+![consola 1](images/consola1.png?raw=true "consola 1")
+
+**Local**
+```
+geth --rpc --networkid 1999 --rpcaddr 127.0.0.1 --rpcport 8545 --rpc --rpcapi "web3,eth,personal,miner,net,txpool" --rpccorsdomain "*" --datadir acc1
+```
+![consola 1 Local](images/consola1-local.png?raw=true "consola 1 Local")
+
+
+### Ingreso a la consola
+
+Inicio de una consola de geth para desbloquear la cuenta e iniciar la minería
+
+**Rinkeby**
+```
+geth -datadir=$HOME/.ethereum/rinkeby attach ipc:$HOME/.ethereum/rinkeby/geth.ipc console
+personal.unlockAccount(eth.coinbase)
+miner.start()
+```
+![consola 2](images/consola2.png?raw=true "consola 2") 
+
+**Local**
+```
+geth attach ipc:\\.\pipe\geth.ipc
+personal.unlockAccount(eth.coinbase)
+miner.start()
+```
+![consola 2 local](images/consola2-local.png?raw=true "consola 2 local") 
+
+
+
+### Carga de ethers
+
+Se cargaron ethers en la cuenta de Rinkeby, para tener saldo al desplegar los contratos. En la red local, se usó el de la minería.
 
 La carga de ethers, se realizó a través de la URL de faucet para rinkeby: [https://faucet.rinkeby.io/](https://faucet.rinkeby.io/).
 
@@ -74,35 +119,18 @@ Se pueden ver las transacciones con los ethers cargados en [etherscan](https://r
 
 ![evidencia ethers](images/account-faucet-ethers.png?raw=true "evidencia ethers")
 
+### Despliegue del contrato con truffle
 
-Para desplegar el contrato, se manejaron 3 consolas:
+En una tercera consola, se ingresó los comandos de truffle para el despliegue del contrato en la red. 
 
-* Consola 1: el nodo de la red rinkeby en ejecución
-
-```
-geth --networkid=4 --datadir=. --bootnodes=enode://a24ac7c5484ef4ed0c5eb2d36620ba4e4aa13b8c84684e1b4aab0cebea2ae45cb4d375b77eab56516d34bfbd3c1a833fc51296ff084b770b94fb9028c4d25ccf@52.169.42.101:30303?discport=30304 --cache=1024 --rpc --rpcapi "eth,net,web3" --rpccorsdomain '*' --rpcaddr 0.0.0.0
-```
-
-![consola 1](images/consola1.png?raw=true "consola 1")
-
-* Consola 2: Un attach a la consola de geth para desbloquear la cuenta
-
-```
-geth -datadir=$HOME/.ethereum/rinkeby attach ipc:$HOME/.ethereum/rinkeby/geth.ipc console
-```
-
-![consola 2](images/consola2.png?raw=true "consola 2") 
-
-* Consola 3: Ingreso de comandos de truffle para el despliegue del contrato en rinkeby.
-
+**Rinkeby**
 ```
 # “-f 2” means you run the migration of migrations/2_deploy_contracts.js only. You don’t run migrations/1_initial_migration.js. Omit if if you want to run all migrations.
 truffle migrate -f 2 --network rinkeby
 ```
 
-![consola 3](images/consola3.png?raw=true "consola 3")
-
 En la instalación de contratos en la red, se detectó un error (*Exceeds block gas limit*) por el valor del *gas* configurado en el archivo *truffle.js*. Para corregirlo, se ingresó en la consola de geth el siguiente comando:
+
 
 ```
 eth.getBlock("latest").gasLimit
@@ -110,8 +138,28 @@ eth.getBlock("latest").gasLimit
 El valor obtenido, es el que se ingresó en el archivo *truffle.js*.
 Con eso se pudo corregir el error.
 
+*Nota: Para rinkeby se deja indicado el despliegue, aunque no se tiene el nodo completo sincronizado, por lo que no se ve todavía el sado de ethers en la cuenta, fallando el despliegue del contrato, por falta de ofndos.*
 
-## Instalación de IPFS
+
+**Local**
+```
+# “-f 2” means you run the migration of migrations/2_deploy_contracts.js only. You don’t run migrations/1_initial_migration.js. Omit if if you want to run all migrations.
+truffle1 migrate -f 2 --network development
+```
+
+![despliegue contrato local](images/despliegue-contrato-local.png?raw=true "despliegue contrato local")
+
+
+----
+
+
+## IPFS
+
+### Instalación de IPFS
+
+Se indica la instalación de IPFS para windows y linux. La red loca se tiene en una máquina con sistema operativo Windows y la red Rinkeby en una virtual en la nube de Google, con linux.
+
+**En Linux (para usar Rinkeby)**
 
 Se ejecutaron los siguientes pasos (disponibles en el [link](https://docs.ipfs.io/introduction/install/) oficial de ipfs), para realizar la instalación:
 
@@ -126,8 +174,11 @@ cd go-ipfs
 
 ![IPFS versión](images/ipfs-version.png?raw=true "IPFS versión")
 
+**En Windows (para usar local)**
 
-## Inicio de IPFS
+Se siguieron los pasos indicados en la éste [link](https://gist.github.com/drwasho/ca224cbd4a21440f7cc1245e594398e4).
+
+### Inicio de IPFS
 
 Se inicializó IPFS, con el siguiente comando:
 
@@ -144,7 +195,7 @@ ipfs daemon
 ![ipfs daemon](images/ipfs-daemon.png?raw=true "ipfs daemon")
 
 
-## Compartir contenido con otros nodos
+### Compartir contenido con otros nodos
 
 Dejando el nodo de IPFS en ejecución, se abrió otra terminal, para comenzar a compartir contenido entre los nodos, con el siguiente comando:
 
@@ -155,7 +206,7 @@ ipfs swarm peers
 ![ipfs swarm peers](images/ipfs-swarm-peers.png?raw=true "ipfs swarm peers")
 
 
-## Compartir nuestro proyecto (pet-shop)
+### Compartir nuestro proyecto (pet-shop)
 
 Se comenzó a compartir, con el siguiente comando de ipfs:
 
@@ -170,7 +221,7 @@ El hash obtenido (el último) de ipfs, es el siguiente:
 
 Con eso, nuestro contenido quedo incorporado en la red de ipfs. 
 
-## Publicar el proyecto en ipfs
+### Publicar el proyecto en ipfs
 
 Para publicar el proyecto en ipfs, se ingresó el siguiente comando:
 
