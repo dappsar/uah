@@ -221,7 +221,7 @@ Contract mined! address: 0x8d5645c240004452b3b4217a449a26f8607c3541 transactionH
 
 
 loadScript("ensutils.js")
-Registrar.register(web3.sha3('antoniodomain3'), eth.coinbase, {from: eth.coinbase})
+TestRegistrar.register(web3.sha3('antoniodomain3'), eth.coinbase, {from: eth.coinbase})
 ens.setResolver(namehash('antoniodomain3.test'), publicResolver.address, {from: eth.coinbase})
 publicResolver.setAddr(namehash("antoniodomain3.test"), eth.coinbase, {from: eth.coinbase})  
 ens.owner(namehash('antoniodomain3.test'))
@@ -254,3 +254,23 @@ Contract mined! address: 0x1627104e12277ffd5fba2d0a6ff2fafa24ff7fc0 transactionH
 
 otra opción custom:
 https://www.tooploox.com/blog/customize-address-management-for-smart-contracts-with-ens
+
+
+Running migration: 2_deploy_contracts.js
+  Deploying ENSRegistry...
+  ... 0xd34ed87587d233add86df8bf6bf9ab9fd2aea4a60bf8dc761c6b14eb91759c49
+  ENSRegistry: 0x17f5d6e7d7383ec1b1670eeb00add06f2cbc8df7
+  Deploying FIFSRegistrar...
+  ... 0xd592fd424b499b4807e3fee7efdf8a31ac9d06d413da0f516e3bc7f079f7cb93
+  FIFSRegistrar: 0x868690a484358c3f89d021ef3a30f64819974db6
+  Deploying PublicResolver...
+  ... 0x099336086364bebc468d182107e1cfc2befc230264e17942266f4f48b1c26925
+  PublicResolver: 0x731c02a59571e948d26de2256dc29360d5e0efc0
+Saving successful migration to network...
+  ... 0x5d01d34693e90ae484fba2ba26b405372c943a19dc098d39a3f9dbc86ccbc4d6
+  ... 0xeba56a6b02e372db4f97a56e0e2ea631005bbcd055b2792c24cdc22973bf4d4e
+Saving artifacts...
+
+
+PublicResolver.address
+JSON.stringify(PublicResolver.abi)
