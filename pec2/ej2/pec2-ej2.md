@@ -195,6 +195,8 @@ cd go-ipfs
 
 Se siguieron los pasos indicados en la éste [link](https://gist.github.com/drwasho/ca224cbd4a21440f7cc1245e594398e4).
 
+![IPFS Windows Install](images/ipfs-windows-install.png?raw=true "IPFS Windows Install")
+
 ### Inicio de IPFS
 
 Se inicializó IPFS, con el siguiente comando:
@@ -209,7 +211,13 @@ Luego, se dió inicio al servicio (daemon) de IPFS (el cual crea un nodo de ipfs
 ipfs daemon
 ```
 
+**Linux** 
+
 ![ipfs daemon](images/ipfs-daemon.png?raw=true "ipfs daemon")
+
+**Windows**
+
+![ipfs daemon](images/ipfs-daemon-windows.png?raw=true "ipfs daemon")
 
 
 
@@ -231,10 +239,19 @@ Se comenzó a compartir, con el siguiente comando de ipfs:
 ```
 ipfs add -r dist/
 ```
+**Linux** 
 
 El hash obtenido (el último) de ipfs, es el siguiente: *Qmcjh4egibTVBsbNi5hbgK6YC5MaUrM5x9SFDJAjNjfxoN*
 
 ![ipfs Add](images/ipfs-add.png?raw=true "ipfs add")
+
+**Windows** 
+
+El hash obtenido (el último) de ipfs, es el siguiente: *Qma2byhtrFGbLgMyqnJ5uRHs9NZws42prYdX1eaMpGrNwx*
+
+
+![ipfs Add Windows](images/ipfs-add-windows.png?raw=true "ipfs addWindows")
+
 
 Con eso, nuestro contenido quedo incorporado en la red de ipfs. 
 
@@ -243,16 +260,34 @@ Con eso, nuestro contenido quedo incorporado en la red de ipfs.
 Para publicar el proyecto en ipfs, se ingresó el siguiente comando:
 
 ```
-# Se utilizó el hash obtenido en el paso anterior
+# Linux:
 ipfs name publish Qmcjh4egibTVBsbNi5hbgK6YC5MaUrM5x9SFDJAjNjfxoN
+
+# Windows:
+ipfs name publish Qma2byhtrFGbLgMyqnJ5uRHs9NZws42prYdX1eaMpGrNwx
 ```
 
 Luego de ejecutado el comando, se obtuvo lo siguiente:
 
+**Linux**
+
 ![ipfs publish](images/ipfs-publish.png?raw=true "ipfs publish")
 
+**Windows**
+
+![ipfs publish Windows](images/ipfs-publish-windows.png?raw=true "ipfs publish Windows")
+
 Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visualizado, ingresando la siguiente url:
+
+**Linux (remoto sobre Rinkeby)**
 
 *gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb*
 
 ![ipfs host result](images/ipfs-host-result.png?raw=true "ipfs host result")
+
+**Windows (local)**
+
+*http://127.0.0.1:8080/ipns/QmXwdaPPTHoNLpVXNbY8hN3H7QRcLRspQgbcd8gfuMiMc8/*
+
+![ipfs host result](images/ipfs-host-result.png?raw=true "ipfs host result")
+

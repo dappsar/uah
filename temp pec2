@@ -1,19 +1,12 @@
-do:
-  terminar de instalar ipfs en windows para probar todo ahì.
-  quedaste en:
-    https://gist.github.com/drwasho/ca224cbd4a21440f7cc1245e594398e4
-    ejecutando: go get -u github.com/whyrusleeping/gx-go
-
-
 ej1:
 	* Terminar de sincronizar red
 	* Ver que se vean los ethers en la cuenta
   * test owner rinkeby y local
 
 ej2:
-	* falta subir contratos por falta de fondos y sync con rinkeby
-	* falta imagen de consola 3
-	* falta prueba de "adopt" con ipfs (depende de contratos)
+	* Ver por que da error el contrato de Adoption en local y remotor quedaría resuelto
+	* Si ok Adoption, sacasr nota en el lugar de consola 3
+	* falta imagen de evidencia de "adopt"
 
 ej3:
 	* no se ve swarm en web google
