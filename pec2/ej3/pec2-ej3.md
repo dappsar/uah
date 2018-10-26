@@ -84,8 +84,6 @@ testRegistrar.register(web3.sha3('dbaranowski.st'), eth.coinbase, {from: eth.coi
 
 publicResolver.address
 
-ens.owner(namehash('dbaranowski.st.test'))
-
 ens.setResolver(namehash('dbaranowski.st.test'), publicResolver.address, {from: eth.coinbase})
 
 ens.resolver(namehash('dbaranowski.st.test'))
