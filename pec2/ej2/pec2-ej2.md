@@ -289,5 +289,5 @@ Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visuali
 
 *http://127.0.0.1:8080/ipns/QmXwdaPPTHoNLpVXNbY8hN3H7QRcLRspQgbcd8gfuMiMc8/*
 
-![ipfs host result](images/ipfs-host-result-localhost.png?raw=true "ipfs host result")
+![ipfs host result](images/ipfs-host-result-local.png?raw=true "ipfs host result")
 
