@@ -25,7 +25,7 @@ En el archivo app.js del ejemplo pet-shop (tanto en las carpetas src como dist),
   App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
 ```
 
-Alternativamente, se puede sacar una cuenta en [infura.io](infura.io) (infraestructura de ethereum en la nube) y configurar el provider para que tome esa red rinkeby.
+Alternativamente, se puede sacar una cuenta en [infura.io](https://infura.io/) (infraestructura de ethereum en la nube) y configurar el provider para que tome esa red rinkeby.
 
 ```
 const provider = new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/API_KEY'
