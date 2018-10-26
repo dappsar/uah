@@ -281,7 +281,7 @@ Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visuali
 
 **Linux (remoto sobre Rinkeby)**
 
-*[gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb](gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb)*
+*[gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb](https://gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb/)*
 
 ![ipfs host result](images/ipfs-host-result.png?raw=true "ipfs host result")
 
