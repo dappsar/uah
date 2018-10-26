@@ -25,13 +25,6 @@ En el archivo app.js del ejemplo pet-shop (tanto en las carpetas src como dist),
   App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
 ```
 
-Alternativamente, se puede sacar una cuenta en [infura.io](https://infura.io/) (infraestructura de ethereum en la nube) y configurar el provider para que tome esa red rinkeby.
-
-```
-const provider = new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/API_KEY'
-```
-
-
 ### Cambios en el 'empaquetado' del proyecto
 
 Para subir los archivos a IPFS y SWARM, se empaquetaron en una sola carpeta.  Primero, se instaló webpack, para generar la carpeta **dist/** y copiar los archivos de forma automática, pero detectando algunos problemas y viendo que el javascript, tiene una ruta relativa a un archivo json (pets.json) que necesita el proyecto para funcionar, se terminó por hacer la copia a mano.
@@ -174,7 +167,7 @@ truffle1 migrate -f 2 --network development
 
 ### Instalación de IPFS
 
-Se indica la instalación de IPFS para windows y linux. La red loca se tiene en una máquina con sistema operativo Windows y la red Rinkeby en una máquina con Linux.
+Se indica la instalación de IPFS para windows y linux. La red local se tiene en una máquina con sistema operativo Windows y la red Rinkeby en una máquina con Linux.
 
 **En Linux (para usar Rinkeby)**
 
@@ -290,4 +283,16 @@ Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visuali
 *[http://127.0.0.1:8080/ipns/QmXwdaPPTHoNLpVXNbY8hN3H7QRcLRspQgbcd8gfuMiMc8/](http://127.0.0.1:8080/ipns/QmXwdaPPTHoNLpVXNbY8hN3H7QRcLRspQgbcd8gfuMiMc8/)*
 
 ![ipfs host result](images/ipfs-host-result-local.png?raw=true "ipfs host result")
+
+
+-------
+
+## Comentarios finales
+
+Alternativamente a una red local o sincronizar Rinkeby, se investigó para sacar una cuenta en [infura.io](https://infura.io/) (infraestructura de ethereum en la nube) y configurar el provider para que tome la red rinkeby ahí. Se evaluará su uso para la PEC3.
+
+```
+# Configuración que habría que hacer para el provider en infura
+const provider = new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/API_KEY'
+```
 

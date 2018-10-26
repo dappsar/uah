@@ -131,8 +131,6 @@ Se toman nota de las direcciones generadas de los contratos ENSRegistry y Public
 
 ```
 EnsRegistry: 0x200da6cf71ae10564210ead718d6cea7b08f6063
-
-# Resolver
 publicResolver: 0xd766d1797aef5f89508332bd14cacd9ee63b3c27
 ```
 
