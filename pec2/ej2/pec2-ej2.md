@@ -281,13 +281,13 @@ Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visuali
 
 **Linux (remoto sobre Rinkeby)**
 
-*gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb*
+*[gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb](gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb)*
 
 ![ipfs host result](images/ipfs-host-result.png?raw=true "ipfs host result")
 
 **Windows (local)**
 
-*http://127.0.0.1:8080/ipns/QmXwdaPPTHoNLpVXNbY8hN3H7QRcLRspQgbcd8gfuMiMc8/*
+*[http://127.0.0.1:8080/ipns/QmXwdaPPTHoNLpVXNbY8hN3H7QRcLRspQgbcd8gfuMiMc8/](http://127.0.0.1:8080/ipns/QmXwdaPPTHoNLpVXNbY8hN3H7QRcLRspQgbcd8gfuMiMc8/)*
 
 ![ipfs host result](images/ipfs-host-result-local.png?raw=true "ipfs host result")
 
