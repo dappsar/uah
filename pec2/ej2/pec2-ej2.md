@@ -15,6 +15,8 @@ Se modificó el archivo [index.html](https://github.com/dappsar/uah/blob/master/
 
 ![Pet Shop](images/pet-shop-nombre.png?raw=true "Pet Shop")
 
+![Pet Shop Adopt](images/pet-shop-adopt.png?raw=true "Pet Shop Adopt")
+
 ### Cambios en el 'empaquetado' del proyecto
 
 Para subir los archivos a IPFS y SWARM, se empaquetaron en una sola carpeta.  Primero, se instaló webpack, para generar la carpeta **dist/** y copiar los archivos de forma automática, pero detectando algunos problemas y viendo que el javascript, tiene una ruta relativa a un archivo json (pets.json) que necesita el proyecto para funcionar, se terminó por hacer la copia a mano.
@@ -157,7 +159,7 @@ truffle1 migrate -f 2 --network development
 
 ### Instalación de IPFS
 
-Se indica la instalación de IPFS para windows y linux. La red loca se tiene en una máquina con sistema operativo Windows y la red Rinkeby en una virtual en la nube de Google, con linux.
+Se indica la instalación de IPFS para windows y linux. La red loca se tiene en una máquina con sistema operativo Windows y la red Rinkeby en una máquina con Linux.
 
 **En Linux (para usar Rinkeby)**
 
@@ -239,3 +241,4 @@ Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visuali
 **gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb**
 
 ![ipfs host result](images/ipfs-host-result.png?raw=true "ipfs host result")
+  
