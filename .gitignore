@@ -65,3 +65,6 @@ typings/
 
 # output folders
 .build
+
+# custom
+.todo
