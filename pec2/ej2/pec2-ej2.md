@@ -2,7 +2,7 @@
 
 A partir de un truffle project como puede ser la pet-shop utilizada en módulos anteriores, haga una pequeña modificación en su frontend para mostrar su nombre al ejecutar la aplicación. (Puede editar cualquier parámetro adicional, siempre y cuando el nombre sea visible). Suba el truffle project a GitHub (no incluya la carpeta node_modules). Arranque un daemon de IPFS y aloje la DApp (Proyecto truffle pet-shop). Debe ser capaz de utilizar la aplicación al igual que en localhost (por ejemplo: con MetaMask). 
 
-Nota: Como en el ejercicio 1, se realizó el ejercicio sobre red Local (a la falta de un nodo completo en las redes de test) y sobre la red Rinkeby.
+Nota: Como en el ejercicio 1, se realizó el ejercicio sobre red Local (a la falta de un nodo completo en las redes de test) y sobre la red Rinkeby se dejan planteados los comandos.
 
 ## Modificación de un proyecto de Truffle
 
@@ -16,6 +16,21 @@ Se modificó el archivo [index.html](https://github.com/dappsar/uah/blob/master/
 ![Pet Shop](images/pet-shop-nombre.png?raw=true "Pet Shop")
 
 ![Pet Shop Adopt](images/pet-shop-adopt.png?raw=true "Pet Shop Adopt")
+
+### Modificación del puerto del provider en app.js
+
+En el archivo app.js del ejemplo pet-shop (tanto en las carpetas src como dist), se encuentra fija la url y puerto del provider, como localhost:7545. Se actualizó el puerto, para corresponderlo con el puerto en donde se está ejecutando localmente la blockchain de rinkeby.
+
+```
+  App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+```
+
+Alternativamente, se puede sacar una cuenta en [infura.io](infura.io) (infraestructura de ethereum en la nube) y configurar el provider para que tome esa red rinkeby.
+
+```
+const provider = new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/API_KEY'
+```
+
 
 ### Cambios en el 'empaquetado' del proyecto
 
@@ -57,7 +72,7 @@ module.exports = {
     },
     development: {
       host: "localhost",
-      port: 7545,
+      port: 8545,
       network_id: "*" // Match any network id
     }
   }
@@ -140,7 +155,7 @@ eth.getBlock("latest").gasLimit
 El valor obtenido, es el que se ingresó en el archivo *truffle.js*.
 Con eso se pudo corregir el error.
 
-*Nota: Para rinkeby se deja indicado el despliegue, aunque no se tiene el nodo completo sincronizado, por lo que no se ve todavía el sado de ethers en la cuenta, fallando el despliegue del contrato, por falta de ofndos.*
+*Nota: Para rinkeby se deja indicado el despliegue, aunque no se tiene el nodo completo sincronizado, por lo que no se ve todavía el saldo de ethers en la cuenta, fallando el despliegue del contrato, por falta de fondos. Eso ocasiona, que luego de desplegar la app en IPFS, al darle "adopt" dará el error (en la consola de google) de "Adoption has not been deployed to detected network (network/artifact mismatch)"*
 
 
 **Local**
@@ -197,6 +212,7 @@ ipfs daemon
 ![ipfs daemon](images/ipfs-daemon.png?raw=true "ipfs daemon")
 
 
+
 ### Compartir contenido con otros nodos
 
 Dejando el nodo de IPFS en ejecución, se abrió otra terminal, para comenzar a compartir contenido entre los nodos, con el siguiente comando:
@@ -216,10 +232,9 @@ Se comenzó a compartir, con el siguiente comando de ipfs:
 ipfs add -r dist/
 ```
 
-![ipfs add](images/ipfs-add.png?raw=true "ipfs add")
+El hash obtenido (el último) de ipfs, es el siguiente: *Qmcjh4egibTVBsbNi5hbgK6YC5MaUrM5x9SFDJAjNjfxoN*
 
-El hash obtenido (el último) de ipfs, es el siguiente:
-**QmdY7NPX1PAiy1e2c3aRLNTjnUgRUbifUJdoStcC3V1aih**
+![ipfs Add](images/ipfs-add.png?raw=true "ipfs add")
 
 Con eso, nuestro contenido quedo incorporado en la red de ipfs. 
 
@@ -229,7 +244,7 @@ Para publicar el proyecto en ipfs, se ingresó el siguiente comando:
 
 ```
 # Se utilizó el hash obtenido en el paso anterior
-ipfs name publish QmdY7NPX1PAiy1e2c3aRLNTjnUgRUbifUJdoStcC3V1aih
+ipfs name publish Qmcjh4egibTVBsbNi5hbgK6YC5MaUrM5x9SFDJAjNjfxoN
 ```
 
 Luego de ejecutado el comando, se obtuvo lo siguiente:
@@ -238,7 +253,6 @@ Luego de ejecutado el comando, se obtuvo lo siguiente:
 
 Eso nos indica que nuestro contenido esta publicado. El mismo, puede ser visualizado, ingresando la siguiente url:
 
-**gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb**
+*gateway.ipfs.io/ipns/Qma1JimxyaBPyWrbMztUVR84uXKGCEYUjFcxTbv2PVrBbb*
 
 ![ipfs host result](images/ipfs-host-result.png?raw=true "ipfs host result")
-  
