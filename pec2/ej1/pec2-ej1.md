@@ -13,12 +13,12 @@ Se realizó la prueba de desplegar el dominio en forma local, en una red de ethe
 #### [Truffle](http://truffleframework.com/docs/getting_started/installation)
  Necesario para compilación y despliegue de los contratos de ENS en la red local.
 ```
-# Para instalarlo con nodeJs
+# Para instalarlo con npm
 npm install -g truffle
 ```
 
 #### [Ethereum Wallet](https://github.com/ethereum/mist/releases/tag/v0.11.1)
-Una simple UI (parte de Mist, pero solo la Wallet), para tener una interfaz y ver las billeteras y su saldo.
+Una simple UI (parte de Mist, pero solo la Wallet), para tener una interfaz y ver las billeteras, su saldo y subir los contratos de ENS (Explicado más adelante)
 ```
 # Se descargó de:
 https://github.com/ethereum/mist/releases
@@ -39,22 +39,11 @@ Se instaló el cliente **geth** con la creación de una *blockchain propia*, com
 geth --rpc --networkid 1999 --rpcaddr 127.0.0.1 --rpcport 8545 --rpcapi "web3,eth" --rpccorsdomain "*" --datadir acc1
 ```
 
-#### Modificaciones en archivo [ensutils.js](https://github.com/ensdomains/ens/blob/master/ensutils.js)
-* Archivos complementarios: Se descargó el achivo de javascript ensutils (su versión para la [mainnet](https://github.com/ensdomains/ens/blob/master/ensutils.js), para [testnet](https://github.com/ensdomains/ens/blob/master/ensutils-testnet.js) y la [modificación para Rinkeby](https://gist.githubusercontent.com/MichalZalecki/db02810da8e582d0494adb2c5fd31f3c/raw/58feec55b99d10559b881ec5480c2d72a0445d99/ensutils-rinkeby.js)), que tiene algunas funciones requeridas para manejarnos con ENS. En ese arhivo se cambiaron las direcciones de los contratos de ENS y del Resolver, por las generadas en nuestra propia blockchain, del resultado de Truffle.
-
-```
-# ENS
-var ens = ensContract.at('0x200da6cf71ae10564210ead718d6cea7b08f6063');
-
-# Resolver
-var publicResolver = resolverContract.at('0xd766d1797aef5f89508332bd14cacd9ee63b3c27');
-```
-
 #### Despliegue de contratos [ENS](http://docs.ens.domains/en/latest/deploying.html)
 
-Al tener la red local, para poder registrar el nombre, también se tuvo que instalar los contratos de ENS en forma local. Para ello, se descargó el [código fuente](https://github.com/ensdomains/ens) de los contratos de ENS, se compilaron y desplegaron con truffle en la red local, ingresando luego las direcciones obtenidas en el [ensutils-testnet.js](ensutils-testnet.js), tanto para el contrato **ENSRegistry** como para el contrato **PublicResolver**. Se dejan documentadas las instrucciones realizadas:
+Al tener la red local, para poder registrar el nombre, también se tuvo que instalar los contratos de ENS en forma local. Para ello, se descargó el [código fuente](https://github.com/ensdomains/ens) de los contratos de ENS, se compilaron y desplegaron con truffle en la red local, ingresando luego las direcciones obtenidas en el [ensutils-testnet.js](ensutils-testnet.js) (indicado en el punto siguiente), tanto para el contrato **ENSRegistry** como para el contrato **PublicResolver**. Se dejan documentadas las instrucciones realizadas:
 
-* Descargar el [código fuente](https://github.com/ensdomains/ens
+* Descargar el [código fuente](https://github.com/ensdomains/ens)
 
 * Instalar las dependencias de nodeJs
 
@@ -138,6 +127,28 @@ Saving artifacts...
 
 ![ENS Truffle Migrate Address](images/ens-truffle-migrate-address.png?raw=true "ENS Truffle Migrate Address")
 
+Se toman nota de las direcciones generadas de los contratos ENSRegistry y PublicResolver, para incorporar luego en el ensutils-testnet.js.
+
+```
+EnsRegistry: 0x200da6cf71ae10564210ead718d6cea7b08f6063
+
+# Resolver
+publicResolver: 0xd766d1797aef5f89508332bd14cacd9ee63b3c27
+```
+
+
+#### Modificaciones en archivo [ensutils.js](https://github.com/ensdomains/ens/blob/master/ensutils.js)
+* Se descargó el achivo de javascript ensutils (su versión para la [mainnet](https://github.com/ensdomains/ens/blob/master/ensutils.js), para [testnet](https://github.com/ensdomains/ens/blob/master/ensutils-testnet.js) y la [modificación para Rinkeby](https://gist.githubusercontent.com/MichalZalecki/db02810da8e582d0494adb2c5fd31f3c/raw/58feec55b99d10559b881ec5480c2d72a0445d99/ensutils-rinkeby.js)), que tiene algunas funciones requeridas para manejarnos con ENS. En ese arhivo se cambiaron las direcciones de los contratos de ENS y del Resolver, por las generadas en nuestra propia blockchain, del resultado de Truffle.
+
+El archivo que quedó finalmente en uso, para la instalación local, es el [ensutils-testnet.js](ensutils-testnet.js).
+
+```
+# ENS
+var ens = ensContract.at('0x200da6cf71ae10564210ead718d6cea7b08f6063');
+
+# Resolver
+var publicResolver = resolverContract.at('0xd766d1797aef5f89508332bd14cacd9ee63b3c27');
+```
 
 #### Despliegue de contratos en Ethereum Wallet
 
@@ -177,7 +188,7 @@ Esas direcciones y ABI se cargaron en Ethereum Wallet
 
 Luego de instalado los requisitos, se comienza con la registración del dominio, desde la consola de Geth. Los pasos realizados fueron:
 
-* Cargar el archivo de scripts ensutils-testnet
+* Cargar el archivo de scripts ensutils-testnet.js
 ```
 loadScript("./ensutils-testnet.js")
 ```
@@ -199,12 +210,6 @@ web3.eth.defaultAccount = web3.eth.accounts[0]
 * Registrar el dominio
 ```
 testRegistrar.register(web3.sha3('dbaranowski2'), eth.accounts[0], {from: eth.accounts[0]})
-```
-
-* Validar la registración
-```
-eth.accounts[0]
-ens.owner(namehash("dbaranowski2.test"))
 ```
 
 * Configurar el resolver, para que el dominio pueda resolver una dirección
