@@ -162,6 +162,10 @@ truffle publish
 
 Se usará la configuración del archivo [ethpm.json](ethpm.json).
 
+Y el contrato se puede buscar luego, en la registry de [ethpm](https://www.ethpm.com/registry):
+https://www.ethpm.com/registry/packages/62
+
+![Registry ethpm](images/ethpm.png?raw=true "Registry ethpm")
 
 #### Testing del contrato
 
