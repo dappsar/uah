@@ -1,6 +1,6 @@
 {
-    "package_name": "pec3baranowskiv3",
-    "version": "0.0.12",
+    "package_name": "pec3baranowskiv4",
+    "version": "0.0.14",
     "description": "Simple contract to voting",
     "authors": [
         "Diego Baranowski <juan.baranowa@gmail.com>"
