@@ -7,7 +7,7 @@ La aplicación requiere generar una **firma** del voto, para luego realizar y pe
 
 El contrato hace uso de la librería **[open-zeppelin](https://github.com/OpenZeppelin/openzeppelin-solidity)** (Ownable, Pausable, SafeMath, ERCRecovery) y de otros contratos, como [ERC165](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-165.md) y [Destructible](https://openzeppelin.org/api/docs/lifecycle_Destructible.html).
 
-La interfaz web se realizó con [bootstrap](https://getbootstrap.com/), HTML y JavaScript; partiendo de los fuentes que genera [Truffle](https://truffleframework.com/). También se usa [nodeJs](https://nodejs.org/es/) y [npm](https://nodejs.org/es/).
+La interfaz web se realizó con [bootstrap](https://getbootstrap.com/), HTML y JavaScript; partiendo de los fuentes que genera [Truffle](https://truffleframework.com/). También se usa [nodeJs](https://nodejs.org/es/) y [npm](https://www.npmjs.com/).
 
 A continuación se describe:
 
