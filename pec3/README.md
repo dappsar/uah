@@ -593,8 +593,7 @@ ipfs add -r ./build/
 Se puede visualizar en el siguiente link:
 [https://ipfs.io/ipfs/QmZgLBT9yxqhyjhipNa1uaah3Yig5MZtEPzPeCedm95g2Q/](https://gateway.ipfs.io/ipfs/QmZgLBT9yxqhyjhipNa1uaah3Yig5MZtEPzPeCedm95g2Q/index.html)
 o
-[https://gateway.ipfs.io/ipfs/QmZgLBT9yxqhyjhipNa1uaah3Yig5MZtEPzPeCedm95g2Q/]
-(https://gateway.ipfs.io/ipfs/QmZgLBT9yxqhyjhipNa1uaah3Yig5MZtEPzPeCedm95g2Q/index.html)
+[https://gateway.ipfs.io/ipfs/QmZgLBT9yxqhyjhipNa1uaah3Yig5MZtEPzPeCedm95g2Q/](https://gateway.ipfs.io/ipfs/QmZgLBT9yxqhyjhipNa1uaah3Yig5MZtEPzPeCedm95g2Q/index.html)
 
 
 Los contratos quedaron desplegados en *Ropsten*, por lo que configurando Metamask en esa red y yendo a la url de IPFS, se podrá ver la aplicación e interactuar con ella en esa red.
