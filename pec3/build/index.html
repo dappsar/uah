@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>uah-sample-election-dapp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href='https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="row">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="banner">
+        <h2 class="text-center">Votación del mejor cantante latino!</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <h4><strong>Listado de candidatos y sus votos</strong>&nbsp;
+          <button class="btn-warning" data-toggle="collapse" data-target="#infoListado">?</button>
+        </h4>
+        <div id="infoListado" class="collapse">
+          <p>
+            Se muestran todos los candidatos que se pueden votar y los votos que tiene cada uno.
+            Para realizar su voto, genere una 'Firma' y luego realice la votaciòn, con los campos que hay debajo del
+            listado de votación.
+          </p>
+        </div>
+        <div class="table-responsive">
+          <table id="example" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Candidato</th>
+                <th>Votos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CNCO</td>
+                <td id="candidato1"></td>
+              </tr>
+              <tr>
+                <td>Luis Fonzi</td>
+                <td id="candidato2"></td>
+              </tr>
+              <tr>
+                <td>Daddy Yankee</td>
+                <td id="candidato3"></td>
+              </tr>
+              <tr>
+                <td>Maluma</td>
+                <td id="candidato4"></td>
+              </tr>
+              <tr>
+                <td>Ozuna</td>
+                <td id="candidato5"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h4><strong>Mensajes de la aplicación</strong>&nbsp;
+          <button class="btn-warning" data-toggle="collapse" data-target="#infoMensajes">?</button>
+        </h4>
+        <div id="infoMensajes" class="collapse">
+          <p>
+            En ésta sección se muestran mensajes de la aplicación
+          </p>
+        </div>
+        <div>
+          <textarea class="form-control" rows="13" max-rows="20" id="msg" placeholder="Se mostrarán mensajes importantes"
+            readonly></textarea>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <h4><strong>1. Generar la firma del voto</strong>&nbsp;
+          <button class="btn-warning" data-toggle="collapse" data-target="#infoFirma">?</button>
+        </h4>
+        <div id="infoFirma" class="collapse">
+          <p>
+            Para realizar la votación, primero tiene que generar la <strong>firma</strong> del voto. Para ello,
+            seleccione un candidato de la lista desplegable y presione el botón <strong>'Firmar'</strong>. Se usará
+            la cuenta indicada como 'Firmante' (es la seleccionada en MetaMask). Una vez realizada la firma, se
+            mostrará
+            el resultado en el campo 'Firma'.
+            Puede generar tantas firmas como quiera.
+          </p>
+        </div>
+        <br>
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label for="candidatesSelect" class="col-sm-2 control-label">Candidato</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                <select class="form-control" id="candidatesSelect"></select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="accountAddress" class="col-sm-2 control-label">Firmante</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                <input class="form-control readonly" id="accountAddress" placeholder="Billetera actual seleccionada en MetaMask"
+                  disabled>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit" onclick="onClickBtnArrowAddress()"><span class="glyphicon glyphicon-arrow-right"></span></button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signatureCreated" class="col-sm-2 control-label">Firma</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                <textarea class="form-control" id="signatureCreated" placeholder="Se generará al presionar el botón 'Firmar'"
+                  disabled></textarea>
+                <span class="input-group-btn">
+                  <button class="btn btn-default btn-textarea" type="submit" onclick="onClickBtnArrowSignature()"><span
+                      class="glyphicon glyphicon-arrow-right"></span></button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <button id="btnFirmar" type="submit" onclick="firmar()" class="btn btn-primary option-button">Firmar</button>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h4><strong>2. Votar y persistir en blockchain</strong>&nbsp;
+          <button class="btn-warning" data-toggle="collapse" data-target="#infoVoto">?</button>
+        </h4>
+        <div id="infoVoto" class="collapse">
+          <p>
+            En ésta sección puede persistir un voto a la blockchain configurada en MetaMask. Es indispensable tener
+            un
+            voto firmado, que puede obtenerlo con el botón 'Firmar'. Teniendo una firma, la direccíón del votante que
+            firmo y el mismo candidato, entonces podrá persistir el voto. Si utiliza otro candidato al usado en la
+            firma, se generará un error.
+            Un votante solo puede votar una vez.
+          </p>
+        </div>
+        <br>
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label for="candidatesSelectVote" class="col-sm-2 control-label">Candidato</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                <select class="form-control" id="candidatesSelectVote"></select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="voter-address" class="col-sm-2 control-label">Votante</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                <input class="form-control" id="voter-address" oninput="voteStateCheck()" placeholder="0x.....">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="voter-signature" class="col-sm-2 control-label">Firma</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                <textarea class="form-control" id="voter-signature" oninput="voteStateCheck()" placeholder="Puede generar una con el botón 'Firmar'"></textarea>
+              </div>
+            </div>
+          </div>
+          <button id="btnVotar" type="submit" onclick="votar()" class="btn btn-primary option-button" disabled>Votar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+
+</html>
