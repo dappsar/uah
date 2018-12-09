@@ -1,0 +1,91 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.col-sm-6 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+p {
+  text-align: justify;
+}
+
+.option-button {
+  width: 100%;
+}
+
+.col-margin-top-2 {
+  margin-top: 2em;
+}
+
+.btn-primary {
+  background: #6b9658;
+  border-color: #557846;
+  color: white;
+}
+
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-primary:hover {
+  background-color: #557846;
+  border-color: #6b9658;
+  color: white;
+}
+
+.wordwrap {
+  white-space: pre-wrap;
+  /* CSS3 */
+  white-space: -moz-pre-wrap;
+  /* Firefox */
+  white-space: -pre-wrap;
+  /* Opera <7 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* IE */
+}
+
+.banner {
+  background: #85144b;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  color: white;
+}
+
+textarea {
+  resize: none;
+  font-size: 1em;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  border-radius: 0;
+  color: #444;
+  background-color: transparent;
+}
+
+.btn-textarea {
+  height: 54px;
+}
+
+.container-fluid {
+  background-color: rgb(240, 240, 191);
+  max-width: 90%;
+  min-width: 400px;
+  padding-bottom: 15px;
+  display: block;
+
+}
+
+# msg {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+#msg:disabled {
+  background-color: rgb(230, 224, 224);
+}
+

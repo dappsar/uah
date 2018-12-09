@@ -1,0 +1,7 @@
+node_modules/**
+installed_contracts/**
+build/**
+.eslint*
+.prettierrc
+npm-debug.log
+.todo

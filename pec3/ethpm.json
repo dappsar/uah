@@ -1,0 +1,19 @@
+{
+    "package_name": "pec3baranowskiv3",
+    "version": "0.0.12",
+    "description": "Simple contract to voting",
+    "authors": [
+        "Diego Baranowski <juan.baranowa@gmail.com>"
+    ],
+    "keywords": [
+        "ethereum",
+        "voting",
+        "election",
+        "vote",
+        "dapp"
+    ],
+    "dependencies": {
+        "zeppelin": "2.0.0-rc.4"
+    },
+    "license": "MIT"
+}
